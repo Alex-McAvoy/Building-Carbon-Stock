@@ -1,0 +1,32 @@
+/*嵌入样式*/
+body {
+    padding: 10px 100px 10px 150px;
+}
+
+/*标题*/
+.layui-tab-title li {
+    font-size: large;
+}
+
+/*卡片样式*/
+.layui-card-header {
+    font-size: medium;
+}
+
+/*模态框表单样式*/
+.layui-form-item .layui-form-label {
+    width: 200px;
+}
+
+.layui-form-item .layui-input-inline {
+    width: 300px;
+}
+
+.form-button {
+    padding-left: 300px;
+}
+
+/*分页条样式*/
+.tablePage {
+    text-align: center;
+}

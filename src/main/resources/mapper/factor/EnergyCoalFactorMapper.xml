@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.factor.dao.EnergyCoalFactorMapper" >
+
+  <select id="selectByPrimaryKey"  parameterType="java.lang.Integer" resultType="com.factor.bean.EnergyCoalFactor" >
+    SELECT * FROM energy_coal_factor
+    where energy_id = #{energyID,jdbcType=INTEGER}
+  </select>
+
+  <select id="getAll" resultType="com.factor.bean.EnergyCoalFactor">
+    SELECT * FROM energy_coal_factor
+  </select>
+
+  <update id="update">
+    UPDATE energy_coal_factor
+    SET average_low_calorific_value = #{averageLowCalorificValue}, standard_coa_coefficient=#{standardCoaCoefficient}
+    WHERE energy_id = #{energyId}
+  </update>
+</mapper>

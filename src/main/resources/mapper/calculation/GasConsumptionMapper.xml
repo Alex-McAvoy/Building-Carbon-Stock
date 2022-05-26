@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.calculation.dao.GasConsumptionMapper" >
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    DELETE FROM gas_consumption
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.calculation.bean.GasConsumption" >
+    INSERT INTO gas_consumption (id, q, w_gas, t_gas, created_time)
+    VALUES (#{id,jdbcType=INTEGER}, #{q,jdbcType=DOUBLE}, #{wGas,jdbcType=DOUBLE},
+            #{tGas,jdbcType=DOUBLE}, #{createdTime,jdbcType=DATE})
+  </insert>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.calculation.bean.GasConsumption">
+    select * FROM gas_consumption
+    WHERE id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByCreatedTime" parameterType="java.util.Date" resultType="com.calculation.bean.GasConsumption">
+    SELECT * FROM gas_consumption
+    WHERE created_time = #{createdTime,jdbcType=DATE}
+  </select>
+
+  <select id="getAll" resultType="com.calculation.bean.GasConsumption">
+    SELECT * FROM gas_consumption
+    ORDER BY id ASC
+  </select>
+
+  <update id="update">
+    UPDATE gas_consumption
+    SET q = #{q}, w_gas=#{wGas},t_gas=#{tGas}
+    WHERE id = #{id}
+  </update>
+
+</mapper>

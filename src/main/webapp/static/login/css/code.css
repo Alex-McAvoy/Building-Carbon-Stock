@@ -1,0 +1,35 @@
+.code
+{
+    font-family:Arial;
+    font-style:italic;
+    color:blue;
+    font-size:30px;
+    border:0;
+    padding:2px 3px;
+    letter-spacing:3px;
+    font-weight:bolder;
+    float:left;
+    cursor:pointer;
+    width:145px;
+    height:50px;
+    line-height:60px;
+    text-align:center;
+    vertical-align:middle;
+    background-color:#D8B7E3;
+    margin: 0px 5px 0 0;
+}
+.code-span {
+    text-decoration:none;
+    font-size:12px;
+    color: #ffffff;
+    padding-left:0px;
+    /*padding-top: 40px;*/
+
+}
+.code-span:hover {
+    text-decoration:underline;
+    cursor:pointer;
+}
+.code-box{
+    margin: 40px 0 20px 0;
+}

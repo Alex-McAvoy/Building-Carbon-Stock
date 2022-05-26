@@ -1,0 +1,122 @@
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* padding: 15px; */
+    /*background: #4158d0;*/
+    /*background: -webkit-linear-gradient(-135deg, #4158d0, #050B16);*/
+    /*background: -o-linear-gradient(-135deg, #4158d0, #050B16);*/
+    /*background: -moz-linear-gradient(-135deg, #4158d0, #050B16);*/
+    /*background: linear-gradient(-135deg, #4158d0, #050B16);*/
+
+    background: url('../../login/images/login-background.jpg') no-repeat;
+    background-size:100% 100%;
+    background-attachment:fixed;
+}
+
+/*------------------------------------------------------------------
+[ login ]*/
+body .login-container {
+    width: 1300px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 100px 130px 100px 95px;
+
+    background: rgba(0,0,0,0);
+}
+
+body .login-container .login-picture {
+    width: 316px;
+}
+
+body .login-container .login-picture img {
+    max-width: 100%;
+}
+
+/*------------------------------------------------------------------
+[ from ]*/
+body .login-container .from-container{
+    width: 316px;
+    padding: 60px;
+    opacity: .9;
+    display: inline-block;
+    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-image: linear-gradient(25deg, #3e0e90, #4e59aa, #4a99c3, #0adbdc);
+    /*box-shadow:10px 10px 10px rgba(131, 125, 127, .5);*/
+}
+body .login-container .from-container .form-title {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+body .login-container .from-container .form-title span {
+    border-bottom: 3px solid rgb(237, 221, 22);
+}
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+@media only screen and (min-width: 960px) {
+    /* styles for browsers larger than 960px; */
+}
+
+@media only screen and (min-width: 1440px) {
+    /* styles for browsers larger than 1440px; */
+}
+
+@media only screen and (min-width: 2000px) {
+    /* for sumo sized (mac) screens */
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+    body .login-container {
+        margin: 10px 10px 10px 10px;
+        padding: 20px 30px 20px 30px;
+    }
+
+    body .login-container .login-picture {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (device-width: 768px) {
+    /* default iPad screens */
+    body .login-container {
+        margin: 10px 10px 10px 10px;
+        padding: 80px 30px 80px 30px;
+    }
+
+    body .login-container .login-picture {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* For portrait layouts only */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* For landscape layouts only */
+}

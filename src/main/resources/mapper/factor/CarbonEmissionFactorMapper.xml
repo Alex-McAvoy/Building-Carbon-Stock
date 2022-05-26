@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.factor.dao.CarbonEmissionFactorMapper" >
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.factor.bean.CarbonEmissionFactor" >
+    SELECT * FROM carbon_emission_factor
+    WHERE carbon_id = #{carbonId,jdbcType=INTEGER}
+  </select>
+
+  <select id="getAll" resultType="com.factor.bean.CarbonEmissionFactor">
+    SELECT * FROM carbon_emission_factor
+  </select>
+
+  <update id="update">
+    UPDATE carbon_emission_factor
+    SET carbon_content = #{carbonContent}, carbon_oxidation_rate=#{carbonOxidationRate},
+        CO2_emission_factor=#{co2EmissionFactor}
+    WHERE carbon_id = #{carbonId}
+  </update>
+</mapper>

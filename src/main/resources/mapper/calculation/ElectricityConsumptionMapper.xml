@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.calculation.dao.ElectricityConsumptionMapper" >
+
+  <resultMap id="ElectricityConsumptionResultMap" type="com.calculation.bean.ElectricityConsumption" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="d_n" property="dN" jdbcType="DOUBLE" />
+    <result column="d_r" property="dR" jdbcType="DOUBLE" />
+    <result column="d_w" property="dW" jdbcType="DOUBLE" />
+    <result column="d_e" property="dE" jdbcType="DOUBLE" />
+    <result column="e" property="e" jdbcType="DOUBLE" />
+    <result column="w_n" property="wN" jdbcType="DOUBLE" />
+    <result column="w_r" property="wR" jdbcType="DOUBLE" />
+    <result column="w_w" property="wW" jdbcType="DOUBLE" />
+    <result column="w_e" property="wE" jdbcType="DOUBLE" />
+    <result column="d" property="d" jdbcType="DOUBLE" />
+    <result column="w_electricity" property="wElectricity" jdbcType="DOUBLE" />
+    <result column="t_grid" property="tGrid" jdbcType="DOUBLE" />
+    <result column="created_time" property="createdTime" jdbcType="DATE" />
+    <association property="gridEmissionFactor" javaType="com.factor.bean.GridEmissionFactor">
+      <id column="area_id" property="areaId"></id>
+      <result column="grid_name" property="gridName"></result>
+      <result column="om" property="om"></result>
+      <result column="bm" property="bm"></result>
+    </association>
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    DELETE FROM electricity_consumption
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.calculation.bean.ElectricityConsumption" >
+    INSERT INTO electricity_consumption
+    VALUES (#{id,jdbcType=INTEGER}, #{dN,jdbcType=DOUBLE}, #{dR,jdbcType=DOUBLE}, #{dW,jdbcType=DOUBLE},
+      #{dE,jdbcType=DOUBLE}, #{e,jdbcType=DOUBLE}, #{wN,jdbcType=DOUBLE}, #{wR,jdbcType=DOUBLE}, 
+      #{wW,jdbcType=DOUBLE}, #{wE,jdbcType=DOUBLE}, #{d,jdbcType=DOUBLE}, #{wElectricity,jdbcType=DOUBLE}, 
+      #{gridEmissionFactor.areaId}, #{tGrid,jdbcType=DOUBLE},#{createdTime,jdbcType=DATE})
+  </insert>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ElectricityConsumptionResultMap" >
+    SELECT ec.id,ec.`d_n`,ec.`d_r`,ec.`d_w`,ec.`d_e`,ec.`e`,
+    ec.`w_n`,ec.`w_r`,ec.`w_w`,ec.`w_e`,ec.`d`,
+    ec.`w_electricity`,
+    gef.`area_id`,gef.`grid_name`,gef.`om`,gef.`bm`,
+    ec.`t_grid`,ec.`created_time`
+    FROM `electricity_consumption` ec,`grid_emission_factor` gef
+    WHERE
+    ec.`grid_id` = gef.`area_id` AND
+    ec.`id` = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByCreatedTime" parameterType="java.util.Date" resultMap="ElectricityConsumptionResultMap">
+    SELECT * FROM electricity_consumption
+    WHERE created_time = #{createdTime,jdbcType=DATE}
+  </select>
+
+  <select id="getAll" resultMap="ElectricityConsumptionResultMap">
+    SELECT ec.id,ec.`d_n`,ec.`d_r`,ec.`d_w`,ec.`d_e`,ec.`e`,
+    ec.`w_n`,ec.`w_r`,ec.`w_w`,ec.`w_e`,ec.`d`,
+    ec.`w_electricity`,
+    gef.`area_id`,gef.`grid_name`,gef.`om`,gef.`bm`,
+    ec.`t_grid`,ec.`created_time`
+    FROM `electricity_consumption` ec,`grid_emission_factor` gef
+    WHERE ec.`grid_id` = gef.`area_id`
+    ORDER BY ec.id ASC
+  </select>
+
+  <update id="update">
+    UPDATE electricity_consumption
+    SET d_n = #{dN}, d_r=#{dR},d_w=#{dW},d_e=#{dE},e=#{e},
+        w_n =#{wN},w_r=#{wR},w_w=#{wW},w_e=#{wE},d=#{d},
+        w_electricity=#{wElectricity},
+        grid_id=#{gridEmissionFactor.areaId},
+        t_grid=#{tGrid}
+    WHERE id = #{id}
+  </update>
+</mapper>

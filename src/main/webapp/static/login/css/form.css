@@ -1,0 +1,49 @@
+
+
+
+body .login-container .from-container .input-container {
+	padding: 20px 0;
+}
+
+body .login-container .from-container .input-container input {
+	border: 0;
+	background: none;
+	outline: 0;
+	color: #fff;
+	margin: 20px 0;
+	padding: 5px 0;
+	display: block;
+	width: 100%;
+	transition: .2s;
+	border-bottom: 2px solid rgb(199, 191, 219);
+}
+
+.input-span{
+	color: #fff;
+	font-size: 13px;
+	letter-spacing: 2px;
+}
+
+body .login-container .from-container .input-container input:hover {
+	border-bottom-color: #fff;
+}
+
+::-webkit-input-placeholder {
+	color: rgb(199, 191, 219);
+}
+
+body .login-container .from-container .message-container {
+	font-family: Poppins-Regular;
+	line-height: 1.5;
+	font-size: 14px;
+	text-align: center;
+	transition: .2s;
+	color: rgb(199, 191, 219);
+	cursor: pointer;
+	
+	position: relative;
+	margin: 20px 0 -30px 0px;
+}
+body .login-container .from-container .message-container:hover {
+	color: #fff;
+}

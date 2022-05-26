@@ -1,0 +1,47 @@
+/*头部*/
+.layui-layout-admin .layui-header {
+    background: rgba(5, 11, 22, 1);
+}
+
+.layui-layout-admin .layui-header .layui-hide-xs {
+    width: 300px;
+    font-size: x-large;
+    color: white;
+}
+
+/*左侧导航栏*/
+.layui-layout-admin .layui-side {
+    background: rgba(5, 11, 22, 1);
+    width: 300px;
+}
+
+.layui-side-scroll {
+    width: 300px;
+}
+
+.layui-nav-tree {
+    background: rgba(5, 11, 22, 1);
+    width: 300px
+}
+
+.layui-nav-item span {
+    font-size: large;
+}
+
+.layui-nav-child span {
+    font-size: medium;
+}
+
+/*内容主体区域*/
+.layui-body div{
+    text-align: center;
+    margin-top: 20%;
+}
+
+/*底部固定区域*/
+.layui-footer {
+    text-align:right;
+}
+.layui-footer span{
+    font-size: large;
+}

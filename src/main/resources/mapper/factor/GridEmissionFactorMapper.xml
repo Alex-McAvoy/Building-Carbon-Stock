@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.factor.dao.GridEmissionFactorMapper" >
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.factor.bean.GridEmissionFactor">
+    SELECT * FROM grid_emission_factor
+    where area_id = #{areaId,jdbcType=INTEGER}
+  </select>
+
+  <select id="getAll" resultType="com.factor.bean.GridEmissionFactor">
+    SELECT * FROM grid_emission_factor
+  </select>
+
+  <update id="update">
+    UPDATE grid_emission_factor
+    SET om = #{om}, bm=#{bm}
+    WHERE area_id = #{areaId}
+  </update>
+
+</mapper>
