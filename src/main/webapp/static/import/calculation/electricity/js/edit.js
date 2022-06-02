@@ -30,7 +30,6 @@ function showEditElectricityTable(pageInfo) {
 
     $("#editElectricityTableTbody").html(""); //清空tbody的数据
     for (var i = 0; i < data.length; i++) { //生成表格
-        var date = new Date(data[i].createdTime);
         var editButton = "<a href=javascript:void(0) id='editButton-" + data[i].id + "' title='点击修改' onclick='editElectricity(" + data[i].id + ", " + data[i].gridEmissionFactor.areaId + ")'><i class='layui-icon'>&#xe642;</i></a>";
         var delButton = "<a href=javascript:void(0) id='delButton-" + data[i].id + "' title='点击删除' onclick='delElectricity(" + data[i].id + ")'><i class='layui-icon'>&#xe640;</i></a>";
 
@@ -43,7 +42,7 @@ function showEditElectricityTable(pageInfo) {
             "<td id='dE-" + data[i].id + "'>" + getThreeBit(data[i].de) + "</td>" +
             "<td id='e-" + data[i].id + "'>" + getThreeBit(data[i].e) + "</td>" +
             "<td id='areaId-" + data[i].gridEmissionFactor.areaId + "'>" + data[i].gridEmissionFactor.gridName + "</td>" +
-            "<td id='createdTime-" + data[i].id + "'>" + date.toLocaleDateString().split('/').join('-') + "</td>" +
+            "<td id='createdTime-" + data[i].id + "'>" + parseCreatedTime(data[i].createdTime) + "</td>" +
             "<td>" + editButton + "/" + delButton + "</td>" +
             "</tr>"
         );

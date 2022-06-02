@@ -32,8 +32,6 @@ function showDisplayElectricityTable(pageInfo) {
 
     $("#displayElectricityTableTbody").html(""); //清空tbody的数据
     for (var i = 0; i < data.length; i++) { //生成表格
-        var date = new Date(data[i].createdTime);
-
         $("#displayElectricityTableTbody").append(
             "<tr>" +
             "<td id='id-" + data[i].id + "'>" + data[i].id + "</td>" +
@@ -45,7 +43,7 @@ function showDisplayElectricityTable(pageInfo) {
             "<td id='wElectricity-" + data[i].id + "'>" + getFiveBit(data[i].welectricity) + "</td>" +
             "<td id='areaId-" + data[i].gridEmissionFactor.areaId + "'>" + data[i].gridEmissionFactor.gridName + "</td>" +
             "<td id='tGrid-" + data[i].id + "'>" + getFiveBit(data[i].tgrid) + "</td>" +
-            "<td id='createdTime-" + data[i].id + "'>" + date.toLocaleDateString().split('/').join('-') + "</td>" +
+            "<td id='createdTime-" + data[i].id + "'>" + parseCreatedTime(data[i].createdTime) + "</td>" +
             "</tr>"
         );
     }

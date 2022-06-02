@@ -30,7 +30,6 @@ function showEditSteamTable(pageInfo) {
 
     $("#editSteamTableTbody").html(""); //清空tbody的数据
     for (var i = 0; i < data.length; i++) { //生成表格
-        var date = new Date(data[i].createdTime);
         var editButton = "<a href=javascript:void(0) id='editButton-" + data[i].id + "' title='点击修改' onclick='editSteam(" + data[i].id + ")'><i class='layui-icon'>&#xe642;</i></a>";
         var delButton = "<a href=javascript:void(0) id='delButton-" + data[i].id + "' title='点击删除' onclick='delSteam(" + data[i].id + ")'><i class='layui-icon'>&#xe640;</i></a>";
 
@@ -38,7 +37,7 @@ function showEditSteamTable(pageInfo) {
             "<tr>" +
             "<td id='id-" + data[i].id + "'>" + data[i].id + "</td>" +
             "<td id='z-" + data[i].id + "'>" + getThreeBit(data[i].z) + "</td>" +
-            "<td id='createdTime-" + data[i].id + "'>" + date.toLocaleDateString().split('/').join('-') + "</td>" +
+            "<td id='createdTime-" + data[i].id + "'>" + parseCreatedTime(data[i].createdTime) + "</td>" +
             "<td>" + editButton + "/" + delButton + "</td>" +
             "</tr>"
         );

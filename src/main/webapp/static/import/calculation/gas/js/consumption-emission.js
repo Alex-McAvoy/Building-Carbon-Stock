@@ -32,15 +32,12 @@ function showDisplayGasTable(pageInfo) {
 
     $("#displayGasTableTbody").html(""); //清空tbody的数据
     for (var i = 0; i < data.length; i++) { //生成表格
-        var date = new Date(data[i].createdTime);
-
         $("#displayGasTableTbody").append(
             "<tr>" +
             "<td id='id-" + data[i].id + "'>" + data[i].id + "</td>" +
             "<td id='wGas-" + data[i].id + "'>" + getFiveBit(data[i].wgas) + "</td>" +
             "<td id='tGas-" + data[i].id + "'>" + getFiveBit(data[i].tgas) + "</td>" +
-
-            "<td id='createdTime-" + data[i].id + "'>" + date.toLocaleDateString().split('/').join('-') + "</td>" +
+            "<td id='createdTime-" + data[i].id + "'>" + parseCreatedTime(data[i].createdTime) + "</td>" +
             "</tr>"
         );
     }

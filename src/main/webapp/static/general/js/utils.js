@@ -15,3 +15,9 @@ function getFiveBit(value) {
     return temp;
 }
 
+//解析日期
+function parseCreatedTime(createdTime) {
+    var temp = new Date(createdTime);
+    var date = temp.toLocaleDateString().split("/").join("-");
+    return date;
+}

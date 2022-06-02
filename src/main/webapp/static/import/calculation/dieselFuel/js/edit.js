@@ -31,7 +31,6 @@ function showEditDieselFuelTable(pageInfo) {
 
     $("#editDieselFuelTableTbody").html(""); //清空tbody的数据
     for (var i = 0; i < data.length; i++) { //生成表格
-        var date = new Date(data[i].createdTime);
         var editButton = "<a href=javascript:void(0) id='editButton-" + data[i].id + "' title='点击修改' onclick='editDieselFuel(" + data[i].id + ")'><i class='layui-icon'>&#xe642;</i></a>";
         var delButton = "<a href=javascript:void(0) id='delButton-" + data[i].id + "' title='点击删除' onclick='delDieselFuel(" + data[i].id + ")'><i class='layui-icon'>&#xe640;</i></a>";
 
@@ -39,7 +38,7 @@ function showEditDieselFuelTable(pageInfo) {
             "<tr>" +
             "<td id='id-" + data[i].id + "'>" + data[i].id + "</td>" +
             "<td id='yDiesel-" + data[i].id + "'>" + getThreeBit(data[i].ydiesel) + "</td>" +
-            "<td id='createdTime-" + data[i].id + "'>" + date.toLocaleDateString().split('/').join('-') + "</td>" +
+            "<td id='createdTime-" + data[i].id + "'>" + parseCreatedTime(data[i].createdTime) + "</td>" +
             "<td>" + editButton + "/" + delButton + "</td>" +
             "</tr>"
         );

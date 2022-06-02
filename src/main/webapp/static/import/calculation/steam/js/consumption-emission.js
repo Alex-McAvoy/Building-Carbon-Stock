@@ -32,14 +32,12 @@ function showDisplaySteamTable(pageInfo) {
 
     $("#displaySteamTableTbody").html(""); //清空tbody的数据
     for (var i = 0; i < data.length; i++) { //生成表格
-        var date = new Date(data[i].createdTime);
-
         $("#displaySteamTableTbody").append(
             "<tr>" +
             "<td id='id-" + data[i].id + "'>" + data[i].id + "</td>" +
             "<td id='wSteam-" + data[i].id + "'>" + getFiveBit(data[i].wsteam) + "</td>" +
             "<td id='tSteam-" + data[i].id + "'>" + getFiveBit(data[i].tsteam) + "</td>" +
-            "<td id='createdTime-" + data[i].id + "'>" + date.toLocaleDateString().split('/').join('-') + "</td>" +
+            "<td id='createdTime-" + data[i].id + "'>" + parseCreatedTime(data[i].createdTime) + "</td>" +
             "</tr>"
         );
     }

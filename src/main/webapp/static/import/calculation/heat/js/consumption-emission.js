@@ -32,14 +32,12 @@ function showDisplayHeatTable(pageInfo) {
 
     $("#displayHeatTableTbody").html(""); //清空tbody的数据
     for (var i = 0; i < data.length; i++) { //生成表格
-        var date = new Date(data[i].createdTime);
-
         $("#displayHeatTableTbody").append(
             "<tr>" +
             "<td id='id-" + data[i].id + "'>" + data[i].id + "</td>" +
             "<td id='wHeat-" + data[i].id + "'>" + getFiveBit(data[i].wheat) + "</td>" +
             "<td id='tHeat-" + data[i].id + "'>" + getFiveBit(data[i].theat) + "</td>" +
-            "<td id='createdTime-" + data[i].id + "'>" + date.toLocaleDateString().split('/').join('-') + "</td>" +
+            "<td id='createdTime-" + data[i].id + "'>" + parseCreatedTime(data[i].createdTime) + "</td>" +
             "</tr>"
         );
     }
