@@ -81,12 +81,12 @@
         <!-- 管理员 -->
         <c:if test="${authority == 1}">
             <li id="edit" class="layui-this">数据编辑</li>
-            <li id="consumption-emission">柴油能耗与碳排放</li>
+            <li id="consumption-emission">天然气能耗与碳排放</li>
             <li id="visualization">可视化</li>
         </c:if>
         <!-- 普通用户 -->
         <c:if test="${authority == 0}">
-            <li id="consumption-emission" class="layui-this">柴油能耗与碳排放</li>
+            <li id="consumption-emission" class="layui-this">天然气能耗与碳排放</li>
             <li id="visualization">可视化</li>
         </c:if>
     </ul>
