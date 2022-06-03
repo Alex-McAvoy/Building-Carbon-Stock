@@ -108,4 +108,18 @@ public class DieselFuelController {
         dieselFuelConsumptionService.deleteByPrimaryKey(deleteId);
         return Msg.success().add("message","删除成功");
     }
+
+    /**
+     * @Description: 获取柴油能耗与碳排放 DieselFuelConsumption 所有数据
+     * @Param: []
+     * @Return: com.utils.Msg
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/4 4:51
+     **/
+    @ResponseBody
+    @RequestMapping(value = "/getAllDieselFuelConsumption",method = RequestMethod.GET)
+    public Msg getAllDieselFuelConsumption() {
+        List<DieselFuelConsumption> list = dieselFuelConsumptionService.getAll();
+        return Msg.success().add("list",list);
+    }
 }
