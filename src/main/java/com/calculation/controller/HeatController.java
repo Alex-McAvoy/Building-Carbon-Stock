@@ -109,4 +109,18 @@ public class HeatController {
         heatConsumptionService.deleteByPrimaryKey(deleteId);
         return Msg.success().add("message","删除成功");
     }
+
+    /**
+     * @Description: 获取供热供冷能耗与碳排放 HeatConsumption 所有数据
+     * @Param: []
+     * @Return: com.utils.Msg
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/4 5:04
+     **/
+    @ResponseBody
+    @RequestMapping(value = "/getAllHeatConsumption",method = RequestMethod.GET)
+    public Msg getAllHeatConsumption() {
+        List<HeatConsumption> list = heatConsumptionService.getAll();
+        return Msg.success().add("list",list);
+    }
 }
