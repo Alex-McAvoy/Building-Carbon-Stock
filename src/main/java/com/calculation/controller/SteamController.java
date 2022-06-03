@@ -110,4 +110,18 @@ public class SteamController {
         steamConsumptionService.deleteByPrimaryKey(deleteId);
         return Msg.success().add("message","删除成功");
     }
+
+    /**
+     * @Description: 获取蒸汽能耗与碳排放 SteamConsumption 所有数据
+     * @Param: []
+     * @Return: com.utils.Msg
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/4 5:06
+     **/
+    @ResponseBody
+    @RequestMapping(value = "/getAllSteamConsumption",method = RequestMethod.GET)
+    public Msg getAllSteamConsumption() {
+        List<SteamConsumption> list = steamConsumptionService.getAll();
+        return Msg.success().add("list",list);
+    }
 }
