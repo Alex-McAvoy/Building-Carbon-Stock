@@ -138,36 +138,17 @@ public class ElectricityConsumptionController {
         return Msg.success().add("message", "删除成功");
     }
 
+    /**
+     * @Description: 获取电力能耗与碳排放 ElectricityConsumption 所有数据
+     * @Param: []
+     * @Return: com.utils.Msg
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/4 4:55
+     **/
     @ResponseBody
-    @RequestMapping(value = "getElectricityAnalysis", method = RequestMethod.GET)
-    public Msg getElectricityAnalysis() {
+    @RequestMapping(value = "/getAllElectricConsumption",method = RequestMethod.GET)
+    public Msg getAllElectricConsumption() {
         List<ElectricityConsumption> list = electricityConsumptionService.getAll();
-
-        double wNSum = 0; //暖通空调总能耗
-        double wRSum = 0; //生活热水总能耗
-        double wWSum = 0; //照明总能耗
-        double wESum = 0; //其他用能设备总能耗
-        double wSum = 0; //总能耗
-        for (int i = 0; i < list.size(); i++) {
-            ElectricityConsumption obj = list.get(i);
-            wNSum += obj.getWN(); //暖通空调能耗
-            wRSum += obj.getWN(); //生活热水能耗
-            wWSum += obj.getWN(); //照明能耗
-            wESum += obj.getWN(); //其他用能设备能耗
-        }
-        wSum = wNSum + wRSum + wWSum + wESum;
-
-        double wNProportion = wNSum/wSum; //暖通空调能耗比例
-        double wRProportion = wRSum/wSum; //暖通空调能耗比例
-        double wWProportion = wWSum/wSum; //暖通空调能耗比例
-        double wEProportion = wESum/wSum; //暖通空调能耗比例
-
-        Map<String,Double> map = new HashMap<>();
-        map.put("wNProportion",wNProportion);
-        map.put("wRProportion",wRProportion);
-        map.put("wWProportion",wWProportion);
-        map.put("wEProportion",wEProportion);
-
-        return Msg.success().add("proportion",map);
+        return Msg.success().add("list",list);
     }
 }
