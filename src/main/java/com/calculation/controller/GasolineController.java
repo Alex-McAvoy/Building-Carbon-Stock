@@ -110,5 +110,18 @@ public class GasolineController {
         return Msg.success().add("message","删除成功");
     }
 
+    /**
+     * @Description: 获取汽油能耗与碳排放 GasolineConsumption 所有数据
+     * @Param: []
+     * @Return: com.utils.Msg
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/4 5:02
+     **/
+    @ResponseBody
+    @RequestMapping(value = "/getAllGasolineConsumption",method = RequestMethod.GET)
+    public Msg getAllGasolineConsumption() {
+        List<GasolineConsumption> list = gasolineConsumptionService.getAll();
+        return Msg.success().add("list",list);
+    }
 
 }
