@@ -28,7 +28,7 @@
     <script type="text/javascript" src="${APP_PATH}/static/frame/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="${APP_PATH}/static/frame/layui-2.6.8/layui.js"></script>
     <link rel="stylesheet" href="${APP_PATH}/static/frame/layui-2.6.8/css/layui.css">
-
+    <script type="text/javascript" src="${APP_PATH}/static/frame/echarts-5.3.2.min.js"></script>
     <!-- 自定义js -->
     <!-- 管理员 -->
     <c:if test="${authority == 1}">
@@ -149,6 +149,8 @@
             <div class="layui-card">
                 <div class="layui-card-header">可视化</div>
                 <div class="layui-card-body">
+                    <div id="display-chart1" style="width: 800px;height:400px;"></div>
+                    <div id="display-chart2" style="width: 800px;height:400px;"></div>
                 </div>
             </div>
         </div>
