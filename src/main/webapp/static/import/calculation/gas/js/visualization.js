@@ -41,10 +41,10 @@ function generateChart1(data) {
                 }
             }
         },
-        dataZoom: { //区域缩放
-            startValue: '2022-05-08',
-            type: 'inside' //内置型数据区域缩放组件
-        },
+        dataZoom: [ //区域缩放
+            {startValue: '2022-05-08'},
+            {type: 'inside'} //内置型数据区域缩放组件
+        ],
         visualMap: {  //分段型视觉映射组件
             top: 50,
             right: 10,
@@ -82,12 +82,12 @@ function generateChart1(data) {
                 lineStyle: { //标线样式
                     color: '#333'
                 },
-                data: {
-                    yAxis: 0.5,
-                    yAxis: 1,
-                    yAxis: 1.5,
-                    yAxis: 2
-                }
+                data: [
+                    {yAxis: 0.5},
+                    {yAxis: 1},
+                    {yAxis: 1.5},
+                    {yAxis: 2}
+                ]
             }
         }
     });
@@ -135,10 +135,10 @@ function generateChart2(data) {
                 }
             }
         },
-        dataZoom: { //区域缩放
-            startValue: '2022-05-08',
-            type: 'inside' //内置型数据区域缩放组件
-        },
+        dataZoom: [ //区域缩放
+            {startValue: '2022-05-08'},
+            {type: 'inside'} //内置型数据区域缩放组件
+        ],
         visualMap: { //分段型视觉映射组件
             top: 50,
             right: 10,
@@ -169,20 +169,20 @@ function generateChart2(data) {
         },
         series: {
             name: 'tgas',
-            type: 'bar',
+            type: 'line',
             data: [],
             markLine: { //图表标线
                 silent: true, //默认为false，即响应和触发鼠标事件
                 lineStyle: { //标线的样式
                     color: '#333'
                 },
-                data: {
-                    yAxis: 0.5,
-                    yAxis: 1,
-                    yAxis: 1.5,
-                    yAxis: 2,
-                    yAxis: 2.5
-                }
+                data: [
+                    {yAxis: 0.5},
+                    {yAxis: 1},
+                    {yAxis: 1.5},
+                    {yAxis: 2},
+                    {yAxis: 2.5}
+                ]
             }
         }
     });
