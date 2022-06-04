@@ -28,6 +28,7 @@
     <script type="text/javascript" src="${APP_PATH}/static/frame/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="${APP_PATH}/static/frame/layui-2.6.8/layui.js"></script>
     <link rel="stylesheet" href="${APP_PATH}/static/frame/layui-2.6.8/css/layui.css">
+    <script type="text/javascript" src="${APP_PATH}/static/frame/echarts-5.3.2.min.js"></script>
 
     <!-- 自定义js -->
     <!-- 管理员 -->
@@ -41,6 +42,7 @@
     <script type="text/javascript" src="${APP_PATH}/static/general/js/utils.js"></script>
     <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/js/consumption-emission.js"></script>
     <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/js/visualization.js"></script>
+
 
     <!-- 自定义css -->
     <link rel="stylesheet" href="${APP_PATH}/static/general/css/import-page.css">
@@ -81,12 +83,12 @@
         <!-- 管理员 -->
         <c:if test="${authority == 1}">
             <li id="edit" class="layui-this">数据编辑</li>
-            <li id="consumption-emission">柴油能耗与碳排放</li>
+            <li id="consumption-emission">天然气能耗与碳排放</li>
             <li id="visualization">可视化</li>
         </c:if>
         <!-- 普通用户 -->
         <c:if test="${authority == 0}">
-            <li id="consumption-emission" class="layui-this">柴油能耗与碳排放</li>
+            <li id="consumption-emission" class="layui-this">天然气能耗与碳排放</li>
             <li id="visualization">可视化</li>
         </c:if>
     </ul>
@@ -149,6 +151,8 @@
             <div class="layui-card">
                 <div class="layui-card-header">可视化</div>
                 <div class="layui-card-body">
+                    <div id="display-chart1" style="width: 800px;height:400px;"></div>
+                    <div id="display-chart2" style="width: 800px;height:400px;"></div>
                 </div>
             </div>
         </div>
