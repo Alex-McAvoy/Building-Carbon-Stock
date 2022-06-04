@@ -30,3 +30,9 @@ body {
 .tablePage {
     text-align: center;
 }
+
+/*可视化图像尺寸*/
+.visualization-chart{
+    width: 800px;
+    height:400px;
+}
