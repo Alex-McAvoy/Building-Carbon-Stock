@@ -108,7 +108,6 @@ function generateChart1(data) {
             data: series
         }]
     });
-
 }
 
 //生成天然气转换碳排放图表
@@ -203,5 +202,4 @@ function generateChart2(data) {
             data: series
         }]
     });
-
 }
