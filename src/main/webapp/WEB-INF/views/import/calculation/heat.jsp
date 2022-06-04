@@ -147,7 +147,6 @@
         <!-- 可视化 -->
         <div class="layui-tab-item">
             <div class="layui-card">
-                <div class="layui-card-header">可视化</div>
                 <div class="layui-collapse" lay-accordion>
                     <div class="layui-colla-item">
                         <h2 class="layui-colla-title">供热供冷转换能耗</h2>
