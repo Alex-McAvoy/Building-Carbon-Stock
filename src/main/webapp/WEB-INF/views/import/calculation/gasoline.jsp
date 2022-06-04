@@ -150,10 +150,19 @@
         <!-- 可视化 -->
         <div class="layui-tab-item">
             <div class="layui-card">
-                <div class="layui-card-header">可视化</div>
-                <div class="layui-card-body">
-                    <div id="display-chart1" style="width: 800px;height:400px;"></div>
-                    <div id="display-chart2" style="width: 800px;height:400px;"></div>
+                <div class="layui-collapse" lay-accordion>
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">汽油转换能耗</h2>
+                        <div class="layui-colla-content layui-show">
+                            <div id="display-chart1" class="visualization-chart"></div>
+                        </div>
+                    </div>
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">汽油转换碳排放</h2>
+                        <div class="layui-colla-content">
+                            <div id="display-chart2" class="visualization-chart"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
