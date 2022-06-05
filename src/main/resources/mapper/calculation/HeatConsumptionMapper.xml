@@ -2,16 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.calculation.dao.HeatConsumptionMapper">
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-        DELETE FROM heat_consumption
-        WHERE id = #{id,jdbcType=INTEGER}
-    </delete>
-
     <insert id="insert" parameterType="com.calculation.bean.HeatConsumption">
         INSERT INTO heat_consumption (id, r, w_heat, t_heat, created_time)
         VALUES (#{id,jdbcType=INTEGER}, #{r,jdbcType=DOUBLE}, #{wHeat,jdbcType=DOUBLE},
                 #{tHeat,jdbcType=DOUBLE}, #{createdTime,jdbcType=DATE})
     </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM heat_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <update id="update">
+        UPDATE heat_consumption
+        SET r = #{r}, w_heat=#{wHeat},t_heat=#{tHeat}
+        WHERE id = #{id}
+    </update>
 
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.calculation.bean.HeatConsumption">
         SELECT * FROM heat_consumption
@@ -39,11 +45,5 @@
         SELECT * FROM heat_consumption
         ORDER BY created_time ASC
     </select>
-
-    <update id="update">
-        UPDATE heat_consumption
-        SET r = #{r}, w_heat=#{wHeat},t_heat=#{tHeat}
-        WHERE id = #{id}
-    </update>
 
 </mapper>

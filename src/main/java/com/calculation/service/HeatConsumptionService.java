@@ -20,6 +20,17 @@ public class HeatConsumptionService {
     HeatConsumptionMapper heatConsumptionMapper;
 
     /**
+     * @Description: 插入
+     * @Param: [record]
+     * @Return: int
+     * @Author: Alex McAvoy
+     * @Date: 2022/5/20 0:32
+     **/
+    public int insert(HeatConsumption record) {
+        return heatConsumptionMapper.insert(record);
+    }
+
+    /**
      * @Description: 根据主键删除
      * @Param: [id]
      * @Return: int
@@ -31,14 +42,14 @@ public class HeatConsumptionService {
     }
 
     /**
-     * @Description: 插入
+     * @Description: 更新
      * @Param: [record]
      * @Return: int
      * @Author: Alex McAvoy
-     * @Date: 2022/5/20 0:32
+     * @Date: 2022/5/22 2:21
      **/
-    public int insert(HeatConsumption record) {
-        return heatConsumptionMapper.insert(record);
+    public int update(HeatConsumption record) {
+        return heatConsumptionMapper.update(record);
     }
 
     /**
@@ -93,17 +104,6 @@ public class HeatConsumptionService {
      **/
     public List<HeatConsumption> getAllOrderByCreatedTime() {
         return heatConsumptionMapper.getAllOrderByCreatedTime();
-    }
-
-    /**
-     * @Description: 更新
-     * @Param: [record]
-     * @Return: int
-     * @Author: Alex McAvoy
-     * @Date: 2022/5/22 2:21
-     **/
-    public int update(HeatConsumption record) {
-        return heatConsumptionMapper.update(record);
     }
 
 }
