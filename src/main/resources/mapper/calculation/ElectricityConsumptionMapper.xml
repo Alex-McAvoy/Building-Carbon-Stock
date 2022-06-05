@@ -25,11 +25,6 @@
         </association>
     </resultMap>
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-        DELETE FROM electricity_consumption
-        WHERE id = #{id,jdbcType=INTEGER}
-    </delete>
-
     <insert id="insert" parameterType="com.calculation.bean.ElectricityConsumption">
         INSERT INTO electricity_consumption
         VALUES (#{id,jdbcType=INTEGER}, #{dN,jdbcType=DOUBLE}, #{dR,jdbcType=DOUBLE}, #{dW,jdbcType=DOUBLE},
@@ -37,6 +32,21 @@
             #{wW,jdbcType=DOUBLE}, #{wE,jdbcType=DOUBLE}, #{d,jdbcType=DOUBLE}, #{wElectricity,jdbcType=DOUBLE},
             #{gridEmissionFactor.areaId}, #{tGrid,jdbcType=DOUBLE},#{createdTime,jdbcType=DATE})
     </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM electricity_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <update id="update">
+        UPDATE electricity_consumption
+        SET d_n = #{dN}, d_r=#{dR},d_w=#{dW},d_e=#{dE},e=#{e},
+            w_n =#{wN},w_r=#{wR},w_w=#{wW},w_e=#{wE},d=#{d},
+            w_electricity=#{wElectricity},
+            grid_id=#{gridEmissionFactor.areaId},
+            t_grid=#{tGrid}
+        WHERE id = #{id}
+    </update>
 
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ElectricityConsumptionResultMap">
         SELECT ec.id,ec.`d_n`,ec.`d_r`,ec.`d_w`,ec.`d_e`,ec.`e`,
@@ -91,13 +101,4 @@
         ORDER BY ec.created_time ASC
     </select>
 
-    <update id="update">
-        UPDATE electricity_consumption
-        SET d_n = #{dN}, d_r=#{dR},d_w=#{dW},d_e=#{dE},e=#{e},
-            w_n =#{wN},w_r=#{wR},w_w=#{wW},w_e=#{wE},d=#{d},
-            w_electricity=#{wElectricity},
-            grid_id=#{gridEmissionFactor.areaId},
-            t_grid=#{tGrid}
-        WHERE id = #{id}
-    </update>
 </mapper>

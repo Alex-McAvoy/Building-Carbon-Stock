@@ -20,6 +20,17 @@ public class ElectricityConsumptionService {
     ElectricityConsumptionMapper electricityConsumptionMapper;
 
     /**
+     * @Description: 插入
+     * @Param: [record]
+     * @Return: int
+     * @Author: Alex McAvoy
+     * @Date: 2022/5/20 1:02
+     **/
+    public int insert(ElectricityConsumption record) {
+        return electricityConsumptionMapper.insert(record);
+    }
+
+    /**
      * @Description: 根据主键删除
      * @Param: [id]
      * @Return: int
@@ -31,14 +42,14 @@ public class ElectricityConsumptionService {
     }
 
     /**
-     * @Description: 插入
+     * @Description: 更新
      * @Param: [record]
      * @Return: int
      * @Author: Alex McAvoy
-     * @Date: 2022/5/20 1:02
+     * @Date: 2022/5/21 23:36
      **/
-    public int insert(ElectricityConsumption record) {
-        return electricityConsumptionMapper.insert(record);
+    public int update(ElectricityConsumption record) {
+        return electricityConsumptionMapper.update(record);
     }
 
     /**
@@ -96,14 +107,4 @@ public class ElectricityConsumptionService {
         return electricityConsumptionMapper.getAllOrderByCreatedTime();
     }
 
-    /**
-     * @Description: 更新
-     * @Param: [record]
-     * @Return: int
-     * @Author: Alex McAvoy
-     * @Date: 2022/5/21 23:36
-     **/
-    public int update(ElectricityConsumption record) {
-        return electricityConsumptionMapper.update(record);
-    }
 }
