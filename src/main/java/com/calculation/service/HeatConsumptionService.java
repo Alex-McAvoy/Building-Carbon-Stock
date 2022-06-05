@@ -63,6 +63,9 @@ public class HeatConsumptionService {
         return heatConsumptionMapper.selectByCreatedTime(date);
     }
 
+    public HeatConsumption getMinCreatedTime(){
+        return heatConsumptionMapper.getMinCreatedTime();
+    }
     /**
      * @Description: 获取所有数据
      * @Param: []

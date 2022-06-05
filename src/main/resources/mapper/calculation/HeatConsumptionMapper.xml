@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.calculation.dao.HeatConsumptionMapper" >
+<mapper namespace="com.calculation.dao.HeatConsumptionMapper">
 
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    DELETE FROM heat_consumption
-    WHERE id = #{id,jdbcType=INTEGER}
-  </delete>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM heat_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
 
-  <insert id="insert" parameterType="com.calculation.bean.HeatConsumption" >
-    INSERT INTO heat_consumption (id, r, w_heat, t_heat, created_time)
-    VALUES (#{id,jdbcType=INTEGER}, #{r,jdbcType=DOUBLE}, #{wHeat,jdbcType=DOUBLE},
-            #{tHeat,jdbcType=DOUBLE}, #{createdTime,jdbcType=DATE})
-  </insert>
+    <insert id="insert" parameterType="com.calculation.bean.HeatConsumption">
+        INSERT INTO heat_consumption (id, r, w_heat, t_heat, created_time)
+        VALUES (#{id,jdbcType=INTEGER}, #{r,jdbcType=DOUBLE}, #{wHeat,jdbcType=DOUBLE},
+                #{tHeat,jdbcType=DOUBLE}, #{createdTime,jdbcType=DATE})
+    </insert>
 
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.calculation.bean.HeatConsumption">
-    SELECT * FROM heat_consumption
-    WHERE id = #{id,jdbcType=INTEGER}
-  </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.calculation.bean.HeatConsumption">
+        SELECT * FROM heat_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </select>
 
-  <select id="selectByCreatedTime" parameterType="java.util.Date" resultType="com.calculation.bean.HeatConsumption">
-    SELECT * FROM heat_consumption
-    WHERE created_time = #{createdTime,jdbcType=DATE}
-  </select>
+    <select id="selectByCreatedTime" parameterType="java.util.Date" resultType="com.calculation.bean.HeatConsumption">
+        SELECT * FROM heat_consumption
+        WHERE created_time = #{createdTime,jdbcType=DATE}
+    </select>
 
-  <select id="getAll" resultType="com.calculation.bean.HeatConsumption">
-    SELECT * FROM heat_consumption
-    ORDER BY id ASC
-  </select>
+    <select id="getMinCreatedTime" resultType="com.calculation.bean.HeatConsumption">
+        SELECT * FROM heat_consumption
+        WHERE created_time = (
+            SELECT MIN(created_time)
+            FROM heat_consumption)
+    </select>
 
-  <update id="update">
-    UPDATE heat_consumption
-    SET r = #{r}, w_heat=#{wHeat},t_heat=#{tHeat}
-    WHERE id = #{id}
-  </update>
+    <select id="getAll" resultType="com.calculation.bean.HeatConsumption">
+        SELECT * FROM heat_consumption
+        ORDER BY id ASC
+    </select>
+
+    <update id="update">
+        UPDATE heat_consumption
+        SET r = #{r}, w_heat=#{wHeat},t_heat=#{tHeat}
+        WHERE id = #{id}
+    </update>
 
 </mapper>

@@ -15,6 +15,7 @@ public interface HeatConsumptionMapper {
     int insert(HeatConsumption record); //插入
     HeatConsumption selectByPrimaryKey(Integer id); //根据主键查询
     HeatConsumption selectByCreatedTime(Date date); //根据日期查询
+    HeatConsumption getMinCreatedTime(); //获取日期最小的数据
     List<HeatConsumption> getAll(); //获取所有数据
     int update(HeatConsumption record); //更新
 }
