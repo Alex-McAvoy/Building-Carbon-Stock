@@ -108,6 +108,10 @@ public class ConsumptionMapperTest {
         List<GasConsumption> list = gasConsumptionMapper.getAll();
         System.out.println(list);
 
+        //获取日期最小的数据
+        GasConsumption min = gasConsumptionMapper.getMinCreatedTime();
+        System.out.println(min);
+
         //插入
         GasConsumption newObj = new GasConsumption(2,16.0,0.02128,0.0345952,new Date());
         gasConsumptionMapper.insert(newObj);
@@ -144,7 +148,7 @@ public class ConsumptionMapperTest {
         System.out.println(list);
 
         //获取日期最小的数据
-        HeatConsumption min = heatConsumptionMapper.getMinCreatedTime();
+        GasolineConsumption min = gasolineConsumptionMapper.getMinCreatedTime();
         System.out.println(min);
 
         //插入
