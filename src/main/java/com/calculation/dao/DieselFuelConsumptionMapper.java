@@ -17,6 +17,7 @@ public interface DieselFuelConsumptionMapper {
     int insert(DieselFuelConsumption record); //插入
     DieselFuelConsumption selectByPrimaryKey(Integer id); //根据主键查询
     DieselFuelConsumption selectByCreatedTime(Date date); //根据日期查询
+    DieselFuelConsumption getByMinCreatedTime(); //获取日期最小的数据
     List<DieselFuelConsumption> getAll(); //获取所有数据
     int update(DieselFuelConsumption record); //更新
 }

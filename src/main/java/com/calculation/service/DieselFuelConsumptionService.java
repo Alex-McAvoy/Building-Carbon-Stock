@@ -62,6 +62,17 @@ public class DieselFuelConsumptionService {
     public DieselFuelConsumption selectByCreatedTime(Date date) {
         return dieselFuelConsumptionMapper.selectByCreatedTime(date);
     }
+
+    /**
+     * @Description: 获取日期最小的数据
+     * @Param: []
+     * @Return: com.calculation.bean.DieselFuelConsumption
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 12:59
+     **/
+    public DieselFuelConsumption getByMinCreatedTime(){
+        return dieselFuelConsumptionMapper.getByMinCreatedTime();
+    }
     
     /**
      * @Description: 获取所有数据

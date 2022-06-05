@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.calculation.dao.DieselFuelConsumptionMapper" >
+<mapper namespace="com.calculation.dao.DieselFuelConsumptionMapper">
 
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    DELETE FROM diesel_fuel_consumption
-    WHERE id = #{id,jdbcType=INTEGER}
-  </delete>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM diesel_fuel_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
 
-  <insert id="insert" parameterType="com.calculation.bean.DieselFuelConsumption" >
-    INSERT INTO diesel_fuel_consumption (id, y_diesel, w_diesel, t_diesel, created_time)
-    VALUES (#{id,jdbcType=INTEGER}, #{yDiesel,jdbcType=DOUBLE}, #{wDiesel,jdbcType=DOUBLE},
-            #{tDiesel,jdbcType=DOUBLE}, #{createdTime,jdbcType=DATE})
-  </insert>
+    <insert id="insert" parameterType="com.calculation.bean.DieselFuelConsumption">
+        INSERT INTO diesel_fuel_consumption (id, y_diesel, w_diesel, t_diesel, created_time)
+        VALUES (#{id,jdbcType=INTEGER}, #{yDiesel,jdbcType=DOUBLE}, #{wDiesel,jdbcType=DOUBLE},
+              #{tDiesel,jdbcType=DOUBLE}, #{createdTime,jdbcType=DATE})
+    </insert>
 
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.calculation.bean.DieselFuelConsumption">
-    SELECT * FROM diesel_fuel_consumption
-    WHERE id = #{id,jdbcType=INTEGER}
-  </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+            resultType="com.calculation.bean.DieselFuelConsumption">
+        SELECT * FROM diesel_fuel_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </select>
 
-  <select id="selectByCreatedTime" parameterType="java.util.Date" resultType="com.calculation.bean.DieselFuelConsumption">
-    SELECT * FROM diesel_fuel_consumption
-    WHERE created_time = #{createdTime,jdbcType=DATE}
-  </select>
+    <select id="selectByCreatedTime" parameterType="java.util.Date"
+            resultType="com.calculation.bean.DieselFuelConsumption">
+        SELECT * FROM diesel_fuel_consumption
+        WHERE created_time = #{createdTime,jdbcType=DATE}
+    </select>
 
-  <select id="getAll" resultType="com.calculation.bean.DieselFuelConsumption">
-    SELECT * FROM diesel_fuel_consumption
-    ORDER BY id ASC
-  </select>
+    <select id="getByMinCreatedTime" resultType="com.calculation.bean.DieselFuelConsumption">
+        SELECT * FROM diesel_fuel_consumption
+        WHERE created_time = (
+            SELECT MIN(created_time)
+            FROM diesel_fuel_consumption)
+    </select>
 
-  <update id="update">
-    UPDATE diesel_fuel_consumption
-    SET y_diesel = #{yDiesel}, w_diesel=#{wDiesel},t_diesel=#{tDiesel}
-    WHERE id = #{id}
-  </update>
+    <select id="getAll" resultType="com.calculation.bean.DieselFuelConsumption">
+        SELECT * FROM diesel_fuel_consumption
+        ORDER BY id ASC
+    </select>
+
+
+    <update id="update">
+        UPDATE diesel_fuel_consumption
+        SET y_diesel = #{yDiesel}, w_diesel=#{wDiesel},t_diesel=#{tDiesel}
+        WHERE id = #{id}
+    </update>
 
 </mapper>
