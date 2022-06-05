@@ -143,6 +143,10 @@ public class ConsumptionMapperTest {
         List<GasolineConsumption> list = gasolineConsumptionMapper.getAll();
         System.out.println(list);
 
+        //获取日期最小的数据
+        HeatConsumption min = heatConsumptionMapper.getMinCreatedTime();
+        System.out.println(min);
+
         //插入
         GasolineConsumption newObj = new GasolineConsumption(2,12.0,0.0176568,0.0351012,new Date());
         gasolineConsumptionMapper.insert(newObj);
@@ -260,15 +264,15 @@ public class ConsumptionMapperTest {
         HeatConsumption min = heatConsumptionMapper.getMinCreatedTime();
         System.out.println(min);
 
-//        //插入
-//        HeatConsumption newObj = new HeatConsumption(2,1000.0,0.03412,0.0945977,new Date());
-//        heatConsumptionMapper.insert(newObj);
-//
-//        //删除
-//        heatConsumptionMapper.deleteByPrimaryKey(2);
-//
-//        //更新
-//        HeatConsumption updateObj = new HeatConsumption(2,500.0,0.03412,0.0945977,new Date());
-//        heatConsumptionMapper.update(updateObj);
+        //插入
+        HeatConsumption newObj = new HeatConsumption(2,1000.0,0.03412,0.0945977,new Date());
+        heatConsumptionMapper.insert(newObj);
+
+        //删除
+        heatConsumptionMapper.deleteByPrimaryKey(2);
+
+        //更新
+        HeatConsumption updateObj = new HeatConsumption(2,500.0,0.03412,0.0945977,new Date());
+        heatConsumptionMapper.update(updateObj);
     }
 }
