@@ -20,35 +20,46 @@ public class GasConsumptionService {
     GasConsumptionMapper gasConsumptionAndCarbonEmissionMapper;
 
     /**
-     * @Description: 根据主键删除
-     * @Param: [id]
-     * @Return: int
-     * @Author: Alex McAvoy
-     * @Date: 2022/5/19 20:52
-     **/
-    public int deleteByPrimaryKey(Integer id){
-        return gasConsumptionAndCarbonEmissionMapper.deleteByPrimaryKey(id);
-    }
-    
-    /**
      * @Description: 插入
      * @Param: [record]
      * @Return: int
      * @Author: Alex McAvoy
      * @Date: 2022/5/19 20:52
      **/
-    public int insert(GasConsumption record){
+    public int insert(GasConsumption record) {
         return gasConsumptionAndCarbonEmissionMapper.insert(record);
     }
 
     /**
-     * @Description: //根据主键查询
+     * @Description: 根据主键删除
+     * @Param: [id]
+     * @Return: int
+     * @Author: Alex McAvoy
+     * @Date: 2022/5/19 20:52
+     **/
+    public int deleteByPrimaryKey(Integer id) {
+        return gasConsumptionAndCarbonEmissionMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * @Description: 更新
+     * @Param: [record]
+     * @Return: int
+     * @Author: Alex McAvoy
+     * @Date: 2022/5/22 2:21
+     **/
+    public int update(GasConsumption record) {
+        return gasConsumptionAndCarbonEmissionMapper.update(record);
+    }
+
+    /**
+     * @Description: 根据主键查询
      * @Param: [id]
      * @Return: com.calculation.bean.GasConsumptionAndCarbonEmission
      * @Author: Alex McAvoy
      * @Date: 2022/5/19 20:53
      **/
-    public GasConsumption selectByPrimaryKey(Integer id){
+    public GasConsumption selectByPrimaryKey(Integer id) {
         return gasConsumptionAndCarbonEmissionMapper.selectByPrimaryKey(id);
     }
 
@@ -62,7 +73,7 @@ public class GasConsumptionService {
     public GasConsumption selectByCreatedTime(Date date) {
         return gasConsumptionAndCarbonEmissionMapper.selectByCreatedTime(date);
     }
-    
+
     /**
      * @Description: 获取日期最小的数据
      * @Param: []
@@ -70,10 +81,10 @@ public class GasConsumptionService {
      * @Author: Alex McAvoy
      * @Date: 2022/6/5 14:08
      **/
-    public GasConsumption getMinCreatedTime(){
+    public GasConsumption getMinCreatedTime() {
         return gasConsumptionAndCarbonEmissionMapper.getMinCreatedTime();
     }
-    
+
     /**
      * @Description: 获取按Id升序的所有数据
      * @Param: []
@@ -84,7 +95,7 @@ public class GasConsumptionService {
     public List<GasConsumption> getAllOrderById() {
         return gasConsumptionAndCarbonEmissionMapper.getAllOrderById();
     }
-    
+
     /**
      * @Description: 获取按日期升序的所有数据
      * @Param: []
@@ -94,17 +105,6 @@ public class GasConsumptionService {
      **/
     public List<GasConsumption> getAllOrderByCreatedTime() {
         return gasConsumptionAndCarbonEmissionMapper.getAllOrderByCreatedTime();
-    }
-
-    /**
-     * @Description: 更新
-     * @Param: [record]
-     * @Return: int
-     * @Author: Alex McAvoy
-     * @Date: 2022/5/22 2:21
-     **/
-    public int update(GasConsumption record) {
-        return gasConsumptionAndCarbonEmissionMapper.update(record);
     }
 
 }
