@@ -217,6 +217,10 @@ public class ConsumptionMapperTest {
         List<SteamConsumption> list = steamConsumptionMapper.getAll();
         System.out.println(list);
 
+        //获取日期最小的数据
+        SteamConsumption min = steamConsumptionMapper.getMinCreatedTime();
+        System.out.println(min);
+
         //插入
         SteamConsumption newObj = new SteamConsumption(2,1000.0,0.0347486,2772.5,new Date());
         steamConsumptionMapper.insert(newObj);
