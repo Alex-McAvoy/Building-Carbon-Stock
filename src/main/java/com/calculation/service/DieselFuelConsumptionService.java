@@ -75,14 +75,25 @@ public class DieselFuelConsumptionService {
     }
     
     /**
-     * @Description: 获取所有数据
+     * @Description: 获取按Id升序的所有数据
      * @Param: []
      * @Return: java.util.List<com.calculation.bean.DieselFuelConsumption>
      * @Author: Alex McAvoy
      * @Date: 2022/5/22 2:20
      **/
-    public List<DieselFuelConsumption> getAll() {
-        return dieselFuelConsumptionMapper.getAll();
+    public List<DieselFuelConsumption> getAllOrderById() {
+        return dieselFuelConsumptionMapper.getAllOrderById();
+    }
+    
+    /**
+     * @Description: 获取按日期升序的所有数据
+     * @Param: []
+     * @Return: java.util.List<com.calculation.bean.DieselFuelConsumption>
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 19:31
+     **/
+    public List<DieselFuelConsumption> getAllOrderByCreatedTime() {
+        return dieselFuelConsumptionMapper.getAllOrderByCreatedTime();
     }
 
     /**

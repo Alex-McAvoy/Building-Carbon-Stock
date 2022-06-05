@@ -32,11 +32,15 @@
             FROM diesel_fuel_consumption)
     </select>
 
-    <select id="getAll" resultType="com.calculation.bean.DieselFuelConsumption">
+    <select id="getAllOrderById" resultType="com.calculation.bean.DieselFuelConsumption">
         SELECT * FROM diesel_fuel_consumption
         ORDER BY id ASC
     </select>
 
+    <select id="getAllOrderByCreatedTime" resultType="com.calculation.bean.DieselFuelConsumption">
+        SELECT * FROM diesel_fuel_consumption
+        ORDER BY created_time ASC
+    </select>
 
     <update id="update">
         UPDATE diesel_fuel_consumption

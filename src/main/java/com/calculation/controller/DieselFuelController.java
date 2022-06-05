@@ -65,7 +65,7 @@ public class DieselFuelController {
     @RequestMapping(value = "/getDieselFuelConsumption", method = RequestMethod.GET)
     public Msg getDieselFuelConsumption(@RequestParam(value = "pn", defaultValue = "1") Integer pn) {
         PageHelper.startPage(pn, 10); //分页查询
-        List<DieselFuelConsumption> list = dieselFuelConsumptionService.getAll();
+        List<DieselFuelConsumption> list = dieselFuelConsumptionService.getAllOrderById();
         PageInfo page = new PageInfo(list, 5);
 
         return Msg.success().add("pageInfo", page);
@@ -119,7 +119,7 @@ public class DieselFuelController {
     @ResponseBody
     @RequestMapping(value = "/getAllDieselFuelConsumption",method = RequestMethod.GET)
     public Msg getAllDieselFuelConsumption() {
-        List<DieselFuelConsumption> list = dieselFuelConsumptionService.getAll();
+        List<DieselFuelConsumption> list = dieselFuelConsumptionService.getAllOrderByCreatedTime();
         return Msg.success().add("list",list);
     }
 }
