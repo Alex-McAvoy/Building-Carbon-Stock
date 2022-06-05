@@ -64,6 +64,17 @@ public class GasolineConsumptionService {
     }
 
     /**
+     * @Description: 获取日期最小的数据
+     * @Param: []
+     * @Return: com.calculation.bean.GasolineConsumption
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 13:51
+     **/
+    public GasolineConsumption getMinCreatedTime(){
+        return gasolineConsumptionMapper.getMinCreatedTime();
+    }
+
+    /**
      * @Description: 获取所有数据
      * @Param: []
      * @Return: java.util.List<com.calculation.bean.GasolineConsumption>

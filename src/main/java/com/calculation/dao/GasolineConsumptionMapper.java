@@ -15,6 +15,7 @@ public interface GasolineConsumptionMapper {
     int insert(GasolineConsumption record); //插入
     GasolineConsumption selectByPrimaryKey(Integer id); //根据主键查询
     GasolineConsumption selectByCreatedTime(Date date); //根据日期查询
+    GasolineConsumption getMinCreatedTime(); //获取日期最小的数据
     List<GasolineConsumption> getAll(); //获取所有数据
     int update(GasolineConsumption record); //更新
 }
