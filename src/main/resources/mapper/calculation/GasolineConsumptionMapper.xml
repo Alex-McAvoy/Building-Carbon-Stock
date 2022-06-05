@@ -2,16 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.calculation.dao.GasolineConsumptionMapper">
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-        DELETE FROM gasoline_consumption
-        WHERE id = #{id,jdbcType=INTEGER}
-    </delete>
-
     <insert id="insert" parameterType="com.calculation.bean.GasolineConsumption">
         INSERT INTO gasoline_consumption (id, y_gasoline, w_gasoline, t_gasoline, created_time)
         values (#{id,jdbcType=INTEGER}, #{yGasoline,jdbcType=DOUBLE}, #{wGasoline,jdbcType=DOUBLE},
                 #{tGasoline,jdbcType=DOUBLE}, #{createdTime,jdbcType=DATE})
     </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM gasoline_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <update id="update">
+        UPDATE gasoline_consumption
+        SET y_gasoline = #{yGasoline}, w_gasoline=#{wGasoline},t_gasoline=#{tGasoline}
+        WHERE id = #{id}
+    </update>
 
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
             resultType="com.calculation.bean.GasolineConsumption">
@@ -41,11 +47,5 @@
         SELECT * FROM gasoline_consumption
         ORDER BY created_time ASC
     </select>
-
-    <update id="update">
-        UPDATE gasoline_consumption
-        SET y_gasoline = #{yGasoline}, w_gasoline=#{wGasoline},t_gasoline=#{tGasoline}
-        WHERE id = #{id}
-    </update>
 
 </mapper>

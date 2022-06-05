@@ -20,6 +20,17 @@ public class GasolineConsumptionService {
     GasolineConsumptionMapper gasolineConsumptionMapper;
 
     /**
+     * @Description: 插入
+     * @Param: [record]
+     * @Return: int
+     * @Author: Alex McAvoy
+     * @Date: 2022/5/20 0:09
+     **/
+    public int insert(GasolineConsumption record) {
+        return gasolineConsumptionMapper.insert(record);
+    }
+
+    /**
      * @Description: 根据主键删除
      * @Param: [id]
      * @Return: int
@@ -31,15 +42,16 @@ public class GasolineConsumptionService {
     }
 
     /**
-     * @Description: 插入
+     * @Description: 更新
      * @Param: [record]
      * @Return: int
      * @Author: Alex McAvoy
-     * @Date: 2022/5/20 0:09
+     * @Date: 2022/5/22 2:21
      **/
-    public int insert(GasolineConsumption record) {
-        return gasolineConsumptionMapper.insert(record);
+    public int update(GasolineConsumption record) {
+        return gasolineConsumptionMapper.update(record);
     }
+
 
     /**
      * @Description: 根据主键查询
@@ -70,7 +82,7 @@ public class GasolineConsumptionService {
      * @Author: Alex McAvoy
      * @Date: 2022/6/5 13:51
      **/
-    public GasolineConsumption getMinCreatedTime(){
+    public GasolineConsumption getMinCreatedTime() {
         return gasolineConsumptionMapper.getMinCreatedTime();
     }
 
@@ -84,7 +96,7 @@ public class GasolineConsumptionService {
     public List<GasolineConsumption> getAllOrderById() {
         return gasolineConsumptionMapper.getAllOrderById();
     }
-    
+
     /**
      * @Description: 获取按日期升序的所有数据
      * @Param: []
@@ -96,14 +108,4 @@ public class GasolineConsumptionService {
         return gasolineConsumptionMapper.getAllOrderByCreatedTime();
     }
 
-    /**
-     * @Description: 更新
-     * @Param: [record]
-     * @Return: int
-     * @Author: Alex McAvoy
-     * @Date: 2022/5/22 2:21
-     **/
-    public int update(GasolineConsumption record) {
-        return gasolineConsumptionMapper.update(record);
-    }
 }
