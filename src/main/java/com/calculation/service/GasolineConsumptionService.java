@@ -75,14 +75,25 @@ public class GasolineConsumptionService {
     }
 
     /**
-     * @Description: 获取所有数据
+     * @Description: 获取按Id升序的所有数据
      * @Param: []
      * @Return: java.util.List<com.calculation.bean.GasolineConsumption>
      * @Author: Alex McAvoy
      * @Date: 2022/5/22 2:21
      **/
-    public List<GasolineConsumption> getAll() {
-        return gasolineConsumptionMapper.getAll();
+    public List<GasolineConsumption> getAllOrderById() {
+        return gasolineConsumptionMapper.getAllOrderById();
+    }
+    
+    /**
+     * @Description: 获取按日期升序的所有数据
+     * @Param: []
+     * @Return: java.util.List<com.calculation.bean.GasolineConsumption>
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 22:00
+     **/
+    public List<GasolineConsumption> getAllOrderByCreatedTime() {
+        return gasolineConsumptionMapper.getAllOrderByCreatedTime();
     }
 
     /**

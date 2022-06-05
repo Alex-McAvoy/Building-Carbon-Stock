@@ -66,7 +66,7 @@ public class GasolineController {
     @RequestMapping(value = "/getGasolineConsumption", method = RequestMethod.GET)
     public Msg getGasolineConsumption(@RequestParam(value = "pn", defaultValue = "1") Integer pn) {
         PageHelper.startPage(pn, 10); //分页查询
-        List<GasolineConsumption> list = gasolineConsumptionService.getAll();
+        List<GasolineConsumption> list = gasolineConsumptionService.getAllOrderById();
         PageInfo page = new PageInfo(list, 5);
 
         return Msg.success().add("pageInfo", page);
@@ -120,7 +120,7 @@ public class GasolineController {
     @ResponseBody
     @RequestMapping(value = "/getAllGasolineConsumption",method = RequestMethod.GET)
     public Msg getAllGasolineConsumption() {
-        List<GasolineConsumption> list = gasolineConsumptionService.getAll();
+        List<GasolineConsumption> list = gasolineConsumptionService.getAllOrderByCreatedTime();
         return Msg.success().add("list",list);
     }
 
