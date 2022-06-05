@@ -15,6 +15,7 @@ public interface ElectricityConsumptionMapper {
     int insert(ElectricityConsumption record); //插入
     ElectricityConsumption selectByPrimaryKey(Integer id); //根据主键查询
     ElectricityConsumption selectByCreatedTime(Date date); //根据日期查询
+    ElectricityConsumption getMinCreatedTime(); //获取日期最小的数据
     List<ElectricityConsumption> getAll(); //获取所有数据
     int update(ElectricityConsumption record); //更新
 }

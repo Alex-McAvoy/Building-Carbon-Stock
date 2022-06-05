@@ -24,12 +24,12 @@
         WHERE created_time = #{createdTime,jdbcType=DATE}
     </select>
 
-  <select id="getMinCreatedTime" resultType="com.calculation.bean.GasConsumption">
+    <select id="getMinCreatedTime" resultType="com.calculation.bean.GasConsumption">
         SELECT * FROM gas_consumption
         WHERE created_time = (
             SELECT MIN(created_time)
             FROM gas_consumption)
-    </select>
+   </select>
 
     <select id="getAll" resultType="com.calculation.bean.GasConsumption">
         SELECT * FROM gas_consumption

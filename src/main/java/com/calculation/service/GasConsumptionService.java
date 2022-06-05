@@ -68,7 +68,7 @@ public class GasConsumptionService {
      * @Param: []
      * @Return: com.calculation.bean.GasConsumption
      * @Author: Alex McAvoy
-     * @Date: 2022/6/5 13:55
+     * @Date: 2022/6/5 14:08
      **/
     public GasConsumption getMinCreatedTime(){
         return gasConsumptionAndCarbonEmissionMapper.getMinCreatedTime();
