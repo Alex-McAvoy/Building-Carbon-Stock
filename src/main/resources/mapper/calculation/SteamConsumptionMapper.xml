@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.calculation.dao.SteamConsumptionMapper" >
+<mapper namespace="com.calculation.dao.SteamConsumptionMapper">
 
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    DELETE FROM steam_consumption
-    WHERE id = #{id,jdbcType=INTEGER}
-  </delete>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM steam_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
 
-  <insert id="insert" parameterType="com.calculation.bean.SteamConsumption" >
-    INSERT INTO steam_consumption (id, z, w_steam, t_steam, created_time)
-    values (#{id,jdbcType=INTEGER}, #{z,jdbcType=DOUBLE}, #{wSteam,jdbcType=DOUBLE}, 
-            #{tSteam,jdbcType=DOUBLE}, #{createdTime,jdbcType=TIMESTAMP})
-  </insert>
+    <insert id="insert" parameterType="com.calculation.bean.SteamConsumption">
+        INSERT INTO steam_consumption (id, z, w_steam, t_steam, created_time)
+        values (#{id,jdbcType=INTEGER}, #{z,jdbcType=DOUBLE}, #{wSteam,jdbcType=DOUBLE},
+                #{tSteam,jdbcType=DOUBLE}, #{createdTime,jdbcType=TIMESTAMP})
+    </insert>
 
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.calculation.bean.SteamConsumption">
-    SELECT * FROM steam_consumption
-    WHERE id = #{id,jdbcType=INTEGER}
-  </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+            resultType="com.calculation.bean.SteamConsumption">
+        SELECT * FROM steam_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </select>
 
-  <select id="selectByCreatedTime" parameterType="java.util.Date" resultType="com.calculation.bean.SteamConsumption">
-    SELECT * FROM steam_consumption
-    WHERE created_time = #{createdTime,jdbcType=DATE}
-  </select>
+    <select id="selectByCreatedTime" parameterType="java.util.Date" resultType="com.calculation.bean.SteamConsumption">
+        SELECT * FROM steam_consumption
+        WHERE created_time = #{createdTime,jdbcType=DATE}
+    </select>
 
-  <select id="getAll" resultType="com.calculation.bean.SteamConsumption">
-    SELECT * FROM steam_consumption
-    ORDER BY id ASC
-  </select>
+    <select id="getMinCreatedTime" resultType="com.calculation.bean.SteamConsumption">
+        SELECT * FROM steam_consumption
+        WHERE created_time = (
+            SELECT MIN(created_time)
+            FROM steam_consumption)
+    </select>
 
-  <update id="update">
-    UPDATE steam_consumption
-    SET z = #{z}, w_steam=#{wSteam},t_steam=#{tSteam}
-    WHERE id = #{id}
-  </update>
+    <select id="getAll" resultType="com.calculation.bean.SteamConsumption">
+        SELECT * FROM steam_consumption
+        ORDER BY id ASC
+    </select>
+
+    <update id="update">
+        UPDATE steam_consumption
+        SET z = #{z}, w_steam=#{wSteam},t_steam=#{tSteam}
+        WHERE id = #{id}
+    </update>
 </mapper>

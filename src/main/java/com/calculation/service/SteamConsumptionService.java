@@ -64,6 +64,17 @@ public class SteamConsumptionService {
     }
 
     /**
+     * @Description: 获取日期最小的数据
+     * @Param: []
+     * @Return: com.calculation.bean.SteamConsumption
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 13:43
+     **/
+    public SteamConsumption getMinCreatedTime(){
+        return steamConsumptionMapper.getMinCreatedTime();
+    }
+    
+    /**
      * @Description: 获取所有数据
      * @Param: []
      * @Return: java.util.List<com.calculation.bean.SteamConsumption>
