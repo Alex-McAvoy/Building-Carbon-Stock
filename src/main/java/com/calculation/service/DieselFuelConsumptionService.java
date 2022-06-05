@@ -70,8 +70,8 @@ public class DieselFuelConsumptionService {
      * @Author: Alex McAvoy
      * @Date: 2022/6/5 12:59
      **/
-    public DieselFuelConsumption getByMinCreatedTime(){
-        return dieselFuelConsumptionMapper.getByMinCreatedTime();
+    public DieselFuelConsumption getMinCreatedTime(){
+        return dieselFuelConsumptionMapper.getMinCreatedTime();
     }
     
     /**

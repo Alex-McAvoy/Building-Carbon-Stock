@@ -25,7 +25,7 @@
         WHERE created_time = #{createdTime,jdbcType=DATE}
     </select>
 
-    <select id="getByMinCreatedTime" resultType="com.calculation.bean.DieselFuelConsumption">
+    <select id="getMinCreatedTime" resultType="com.calculation.bean.DieselFuelConsumption">
         SELECT * FROM diesel_fuel_consumption
         WHERE created_time = (
             SELECT MIN(created_time)
