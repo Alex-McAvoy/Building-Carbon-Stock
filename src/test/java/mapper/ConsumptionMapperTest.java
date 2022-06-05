@@ -67,8 +67,12 @@ public class ConsumptionMapperTest {
         obj = electricityConsumptionMapper.selectByCreatedTime(date);
         System.out.println(obj);
 
-        //获取所有数据
-        List<ElectricityConsumption> list = electricityConsumptionMapper.getAll();
+        //获取按Id升序的所有数据
+        List<ElectricityConsumption> list = electricityConsumptionMapper.getAllOrderById();
+        System.out.println(list);
+
+        //获取按日期升序的所有数据
+        list = electricityConsumptionMapper.getAllOrderByCreatedTime();
         System.out.println(list);
 
         //获取日期最小的数据
@@ -108,8 +112,12 @@ public class ConsumptionMapperTest {
         obj = gasConsumptionMapper.selectByCreatedTime(date);
         System.out.println(obj);
 
-        //获取所有数据
-        List<GasConsumption> list = gasConsumptionMapper.getAll();
+        //获取按Id升序的所有数据
+        List<GasConsumption> list = gasConsumptionMapper.getAllOrderById();
+        System.out.println(list);
+
+        //获取按日期升序的所有数据
+        list = gasConsumptionMapper.getAllOrderByCreatedTime();
         System.out.println(list);
 
         //获取日期最小的数据
@@ -147,8 +155,12 @@ public class ConsumptionMapperTest {
         obj = gasolineConsumptionMapper.selectByCreatedTime(date);
         System.out.println(obj);
 
-        //获取所有数据
-        List<GasolineConsumption> list = gasolineConsumptionMapper.getAll();
+        //获取按Id升序的所有数据
+        List<GasolineConsumption> list = gasolineConsumptionMapper.getAllOrderById();
+        System.out.println(list);
+
+        //获取按日期升序的所有数据
+        list = gasolineConsumptionMapper.getAllOrderByCreatedTime();
         System.out.println(list);
 
         //获取日期最小的数据
@@ -186,8 +198,12 @@ public class ConsumptionMapperTest {
         obj = dieselFuelConsumptionMapper.selectByCreatedTime(date);
         System.out.println(obj);
 
-        //获取所有数据
-        List<DieselFuelConsumption> list = dieselFuelConsumptionMapper.getAll();
+        //获取按Id升序的所有数据
+        List<DieselFuelConsumption> list = dieselFuelConsumptionMapper.getAllOrderById();
+        System.out.println(list);
+
+        //获取按日期升序的所有数据
+        list = dieselFuelConsumptionMapper.getAllOrderByCreatedTime();
         System.out.println(list);
 
         //获取日期最小的数据
@@ -225,8 +241,12 @@ public class ConsumptionMapperTest {
         obj = steamConsumptionMapper.selectByCreatedTime(date);
         System.out.println(obj);
 
-        //获取所有数据
-        List<SteamConsumption> list = steamConsumptionMapper.getAll();
+        //获取按Id升序的所有数据
+        List<SteamConsumption> list = steamConsumptionMapper.getAllOrderById();
+        System.out.println(list);
+
+        //获取按日期升序的所有数据
+        list = steamConsumptionMapper.getAllOrderByCreatedTime();
         System.out.println(list);
 
         //获取日期最小的数据
@@ -264,8 +284,12 @@ public class ConsumptionMapperTest {
         obj = heatConsumptionMapper.selectByCreatedTime(date);
         System.out.println(obj);
 
-        //获取所有数据
-        List<HeatConsumption> list = heatConsumptionMapper.getAll();
+        //获取按Id升序的所有数据
+        List<HeatConsumption> list = heatConsumptionMapper.getAllOrderById();
+        System.out.println(list);
+
+        //获取按日期升序的所有数据
+        list = heatConsumptionMapper.getAllOrderByCreatedTime();
         System.out.println(list);
 
         //获取日期最小的数据
