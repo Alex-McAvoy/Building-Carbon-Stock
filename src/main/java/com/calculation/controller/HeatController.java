@@ -66,7 +66,7 @@ public class HeatController {
     @RequestMapping(value = "/getHeatConsumption", method = RequestMethod.GET)
     public Msg getHeatConsumption(@RequestParam(value = "pn", defaultValue = "1") Integer pn) {
         PageHelper.startPage(pn, 10); //分页查询
-        List<HeatConsumption> list = heatConsumptionService.getAll();
+        List<HeatConsumption> list = heatConsumptionService.getAllOrderById();
         PageInfo page = new PageInfo(list, 5);
 
         return Msg.success().add("pageInfo", page);
@@ -120,7 +120,7 @@ public class HeatController {
     @ResponseBody
     @RequestMapping(value = "/getAllHeatConsumption",method = RequestMethod.GET)
     public Msg getAllHeatConsumption() {
-        List<HeatConsumption> list = heatConsumptionService.getAll();
+        List<HeatConsumption> list = heatConsumptionService.getAllOrderByCreatedTime();
         return Msg.success().add("list",list);
     }
 }

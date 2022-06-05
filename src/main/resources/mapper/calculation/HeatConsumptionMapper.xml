@@ -30,9 +30,14 @@
             FROM heat_consumption)
     </select>
 
-    <select id="getAll" resultType="com.calculation.bean.HeatConsumption">
+    <select id="getAllOrderById" resultType="com.calculation.bean.HeatConsumption">
         SELECT * FROM heat_consumption
         ORDER BY id ASC
+    </select>
+
+    <select id="getAllOrderByCreatedTime" resultType="com.calculation.bean.HeatConsumption">
+        SELECT * FROM heat_consumption
+        ORDER BY created_time ASC
     </select>
 
     <update id="update">

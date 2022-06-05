@@ -80,8 +80,19 @@ public class HeatConsumptionService {
      * @Author: Alex McAvoy
      * @Date: 2022/5/22 2:21
      **/
-    public List<HeatConsumption> getAll() {
-        return heatConsumptionMapper.getAll();
+    public List<HeatConsumption> getAllOrderById() {
+        return heatConsumptionMapper.getAllOrderById();
+    }
+    
+    /**
+     * @Description: 获取按日期升序的所有数据
+     * @Param: []
+     * @Return: java.util.List<com.calculation.bean.HeatConsumption>
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 22:02
+     **/
+    public List<HeatConsumption> getAllOrderByCreatedTime() {
+        return heatConsumptionMapper.getAllOrderByCreatedTime();
     }
 
     /**
