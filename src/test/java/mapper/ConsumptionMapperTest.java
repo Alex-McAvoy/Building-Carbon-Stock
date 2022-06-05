@@ -178,6 +178,10 @@ public class ConsumptionMapperTest {
         List<DieselFuelConsumption> list = dieselFuelConsumptionMapper.getAll();
         System.out.println(list);
 
+        //获取日期最小的数据
+        DieselFuelConsumption min = dieselFuelConsumptionMapper.getMinCreatedTime();
+        System.out.println(min);
+
         //插入
         DieselFuelConsumption newObj = new DieselFuelConsumption(2,11.0,0.0160281,0.0340549,new Date());
         dieselFuelConsumptionMapper.insert(newObj);
