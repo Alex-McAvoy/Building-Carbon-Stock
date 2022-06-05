@@ -75,14 +75,25 @@ public class ElectricityConsumptionService {
     }
 
     /**
-     * @Description: 获取所有数据
+     * @Description: 获取按Id升序的所有数据
      * @Param: []
      * @Return: java.util.List<com.calculation.bean.ElectricityConsumption>
      * @Author: Alex McAvoy
      * @Date: 2022/5/21 19:15
      **/
-    public List<ElectricityConsumption> getAll() {
-        return electricityConsumptionMapper.getAll();
+    public List<ElectricityConsumption> getAllOrderById() {
+        return electricityConsumptionMapper.getAllOrderById();
+    }
+
+    /**
+     * @Description: 获取按日期升序的所有数据
+     * @Param: []
+     * @Return: java.util.List<com.calculation.bean.ElectricityConsumption>
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 21:35
+     **/
+    public List<ElectricityConsumption> getAllOrderByCreatedTime() {
+        return electricityConsumptionMapper.getAllOrderByCreatedTime();
     }
 
     /**

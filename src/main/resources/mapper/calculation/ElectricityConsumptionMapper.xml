@@ -69,7 +69,7 @@
               FROM `electricity_consumption` ec)
     </select>
 
-    <select id="getAll" resultMap="ElectricityConsumptionResultMap">
+    <select id="getAllOrderById" resultMap="ElectricityConsumptionResultMap">
         SELECT ec.id,ec.`d_n`,ec.`d_r`,ec.`d_w`,ec.`d_e`,ec.`e`,
             ec.`w_n`,ec.`w_r`,ec.`w_w`,ec.`w_e`,ec.`d`,
             ec.`w_electricity`,
@@ -78,6 +78,17 @@
         FROM `electricity_consumption` ec,`grid_emission_factor` gef
         WHERE ec.`grid_id` = gef.`area_id`
         ORDER BY ec.id ASC
+    </select>
+
+    <select id="getAllOrderByCreatedTime" resultMap="ElectricityConsumptionResultMap">
+        SELECT ec.id,ec.`d_n`,ec.`d_r`,ec.`d_w`,ec.`d_e`,ec.`e`,
+            ec.`w_n`,ec.`w_r`,ec.`w_w`,ec.`w_e`,ec.`d`,
+            ec.`w_electricity`,
+            gef.`area_id`,gef.`grid_name`,gef.`om`,gef.`bm`,
+            ec.`t_grid`,ec.`created_time`
+        FROM `electricity_consumption` ec,`grid_emission_factor` gef
+        WHERE ec.`grid_id` = gef.`area_id`
+        ORDER BY ec.created_time ASC
     </select>
 
     <update id="update">
