@@ -2,16 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.calculation.dao.SteamConsumptionMapper">
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-        DELETE FROM steam_consumption
-        WHERE id = #{id,jdbcType=INTEGER}
-    </delete>
-
     <insert id="insert" parameterType="com.calculation.bean.SteamConsumption">
         INSERT INTO steam_consumption (id, z, w_steam, t_steam, created_time)
         values (#{id,jdbcType=INTEGER}, #{z,jdbcType=DOUBLE}, #{wSteam,jdbcType=DOUBLE},
                 #{tSteam,jdbcType=DOUBLE}, #{createdTime,jdbcType=TIMESTAMP})
     </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM steam_consumption
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <update id="update">
+        UPDATE steam_consumption
+        SET z = #{z}, w_steam=#{wSteam},t_steam=#{tSteam}
+        WHERE id = #{id}
+    </update>
 
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
             resultType="com.calculation.bean.SteamConsumption">
@@ -41,9 +47,4 @@
         ORDER BY created_time ASC
     </select>
 
-    <update id="update">
-        UPDATE steam_consumption
-        SET z = #{z}, w_steam=#{wSteam},t_steam=#{tSteam}
-        WHERE id = #{id}
-    </update>
 </mapper>

@@ -11,12 +11,12 @@ import java.util.List;
  * @Date: 2022/5/20 0:17
  **/
 public interface SteamConsumptionMapper {
-    int deleteByPrimaryKey(Integer id); //根据主键删除
     int insert(SteamConsumption record); //插入
+    int deleteByPrimaryKey(Integer id); //根据主键删除
+    int update(SteamConsumption record); //更新
     SteamConsumption selectByPrimaryKey(Integer id); //根据主键查询
     SteamConsumption selectByCreatedTime(Date date); //根据日期查询
     SteamConsumption getMinCreatedTime(); //获取日期最小的数据
     List<SteamConsumption> getAllOrderById(); //获取按Id升序的所有数据
     List<SteamConsumption> getAllOrderByCreatedTime(); //获取按日期升序的所有数据
-    int update(SteamConsumption record); //更新
 }

@@ -20,6 +20,17 @@ public class SteamConsumptionService {
     SteamConsumptionMapper steamConsumptionMapper;
 
     /**
+     * @Description: 插入
+     * @Param: [record]
+     * @Return: int
+     * @Author: Alex McAvoy
+     * @Date: 2022/5/20 0:19
+     **/
+    public int insert(SteamConsumption record) {
+        return steamConsumptionMapper.insert(record);
+    }
+
+    /**
      * @Description: 根据主键删除
      * @Param: [id]
      * @Return: int
@@ -31,14 +42,14 @@ public class SteamConsumptionService {
     }
 
     /**
-     * @Description: 插入
+     * @Description: 更新
      * @Param: [record]
      * @Return: int
      * @Author: Alex McAvoy
-     * @Date: 2022/5/20 0:19
+     * @Date: 2022/5/22 2:18
      **/
-    public int insert(SteamConsumption record) {
-        return steamConsumptionMapper.insert(record);
+    public int update(SteamConsumption record) {
+        return steamConsumptionMapper.update(record);
     }
 
     /**
@@ -70,10 +81,10 @@ public class SteamConsumptionService {
      * @Author: Alex McAvoy
      * @Date: 2022/6/5 13:43
      **/
-    public SteamConsumption getMinCreatedTime(){
+    public SteamConsumption getMinCreatedTime() {
         return steamConsumptionMapper.getMinCreatedTime();
     }
-    
+
     /**
      * @Description: 获取按Id升序的所有数据
      * @Param: []
@@ -84,7 +95,7 @@ public class SteamConsumptionService {
     public List<SteamConsumption> getAllOrderById() {
         return steamConsumptionMapper.getAllOrderById();
     }
-    
+
     /**
      * @Description: 获取按日期升序的所有数据
      * @Param: []
@@ -96,14 +107,4 @@ public class SteamConsumptionService {
         return steamConsumptionMapper.getAllOrderByCreatedTime();
     }
 
-    /**
-     * @Description: 更新
-     * @Param: [record]
-     * @Return: int
-     * @Author: Alex McAvoy
-     * @Date: 2022/5/22 2:18
-     **/
-    public int update(SteamConsumption record) {
-        return steamConsumptionMapper.update(record);
-    }
 }
