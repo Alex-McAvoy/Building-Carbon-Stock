@@ -75,14 +75,25 @@ public class SteamConsumptionService {
     }
     
     /**
-     * @Description: 获取所有数据
+     * @Description: 获取按Id升序的所有数据
      * @Param: []
      * @Return: java.util.List<com.calculation.bean.SteamConsumption>
      * @Author: Alex McAvoy
      * @Date: 2022/5/22 2:18
      **/
-    public List<SteamConsumption> getAll() {
-        return steamConsumptionMapper.getAll();
+    public List<SteamConsumption> getAllOrderById() {
+        return steamConsumptionMapper.getAllOrderById();
+    }
+    
+    /**
+     * @Description: 获取按日期升序的所有数据
+     * @Param: []
+     * @Return: java.util.List<com.calculation.bean.SteamConsumption>
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 22:36
+     **/
+    public List<SteamConsumption> getAllOrderByCreatedTime() {
+        return steamConsumptionMapper.getAllOrderByCreatedTime();
     }
 
     /**

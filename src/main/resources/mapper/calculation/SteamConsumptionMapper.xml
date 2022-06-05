@@ -31,9 +31,14 @@
             FROM steam_consumption)
     </select>
 
-    <select id="getAll" resultType="com.calculation.bean.SteamConsumption">
+    <select id="getAllOrderById" resultType="com.calculation.bean.SteamConsumption">
         SELECT * FROM steam_consumption
         ORDER BY id ASC
+    </select>
+
+    <select id="getAllOrderByCreatedTime" resultType="com.calculation.bean.SteamConsumption">
+        SELECT * FROM steam_consumption
+        ORDER BY created_time ASC
     </select>
 
     <update id="update">

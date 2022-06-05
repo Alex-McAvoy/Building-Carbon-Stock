@@ -67,7 +67,7 @@ public class SteamController {
     @RequestMapping(value = "/getSteamConsumption", method = RequestMethod.GET)
     public Msg getSteamConsumption(@RequestParam(value = "pn", defaultValue = "1") Integer pn) {
         PageHelper.startPage(pn, 10); //分页查询
-        List<SteamConsumption> list = steamConsumptionService.getAll();
+        List<SteamConsumption> list = steamConsumptionService.getAllOrderById();
         PageInfo page = new PageInfo(list, 5);
 
         return Msg.success().add("pageInfo", page);
@@ -121,7 +121,7 @@ public class SteamController {
     @ResponseBody
     @RequestMapping(value = "/getAllSteamConsumption",method = RequestMethod.GET)
     public Msg getAllSteamConsumption() {
-        List<SteamConsumption> list = steamConsumptionService.getAll();
+        List<SteamConsumption> list = steamConsumptionService.getAllOrderByCreatedTime();
         return Msg.success().add("list",list);
     }
 }

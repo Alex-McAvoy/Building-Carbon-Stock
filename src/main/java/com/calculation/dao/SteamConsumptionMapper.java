@@ -16,6 +16,7 @@ public interface SteamConsumptionMapper {
     SteamConsumption selectByPrimaryKey(Integer id); //根据主键查询
     SteamConsumption selectByCreatedTime(Date date); //根据日期查询
     SteamConsumption getMinCreatedTime(); //获取日期最小的数据
-    List<SteamConsumption> getAll(); //获取所有数据
+    List<SteamConsumption> getAllOrderById(); //获取按Id升序的所有数据
+    List<SteamConsumption> getAllOrderByCreatedTime(); //获取按日期升序的所有数据
     int update(SteamConsumption record); //更新
 }
