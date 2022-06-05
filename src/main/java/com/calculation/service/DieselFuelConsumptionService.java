@@ -20,6 +20,17 @@ public class DieselFuelConsumptionService {
     DieselFuelConsumptionMapper dieselFuelConsumptionMapper;
 
     /**
+     * @Description: 插入
+     * @Param: [record]
+     * @Return: int
+     * @Author: Alex McAvoy
+     * @Date: 2022/5/19 23:56
+     **/
+    public int insert(DieselFuelConsumption record) {
+        return dieselFuelConsumptionMapper.insert(record);
+    }
+
+    /**
      * @Description: 根据主键删除
      * @Param: [id]
      * @Return: int
@@ -31,14 +42,14 @@ public class DieselFuelConsumptionService {
     }
 
     /**
-     * @Description: 插入
+     * @Description: 更新
      * @Param: [record]
      * @Return: int
      * @Author: Alex McAvoy
-     * @Date: 2022/5/19 23:56
+     * @Date: 2022/5/22 2:20
      **/
-    public int insert(DieselFuelConsumption record) {
-        return dieselFuelConsumptionMapper.insert(record);
+    public int update(DieselFuelConsumption record) {
+        return dieselFuelConsumptionMapper.update(record);
     }
 
     /**
@@ -70,10 +81,10 @@ public class DieselFuelConsumptionService {
      * @Author: Alex McAvoy
      * @Date: 2022/6/5 12:59
      **/
-    public DieselFuelConsumption getMinCreatedTime(){
+    public DieselFuelConsumption getMinCreatedTime() {
         return dieselFuelConsumptionMapper.getMinCreatedTime();
     }
-    
+
     /**
      * @Description: 获取按Id升序的所有数据
      * @Param: []
@@ -84,7 +95,7 @@ public class DieselFuelConsumptionService {
     public List<DieselFuelConsumption> getAllOrderById() {
         return dieselFuelConsumptionMapper.getAllOrderById();
     }
-    
+
     /**
      * @Description: 获取按日期升序的所有数据
      * @Param: []
@@ -94,16 +105,5 @@ public class DieselFuelConsumptionService {
      **/
     public List<DieselFuelConsumption> getAllOrderByCreatedTime() {
         return dieselFuelConsumptionMapper.getAllOrderByCreatedTime();
-    }
-
-    /**
-     * @Description: 更新
-     * @Param: [record]
-     * @Return: int
-     * @Author: Alex McAvoy
-     * @Date: 2022/5/22 2:20
-     **/
-    public int update(DieselFuelConsumption record) {
-        return dieselFuelConsumptionMapper.update(record);
     }
 }
