@@ -31,9 +31,14 @@
             FROM gas_consumption)
    </select>
 
-    <select id="getAll" resultType="com.calculation.bean.GasConsumption">
+    <select id="getAllOrderById" resultType="com.calculation.bean.GasConsumption">
         SELECT * FROM gas_consumption
         ORDER BY id ASC
+    </select>
+
+    <select id="getAllOrderByCreatedTime" resultType="com.calculation.bean.GasConsumption">
+        SELECT * FROM gas_consumption
+        ORDER BY created_time ASC
     </select>
 
     <update id="update">

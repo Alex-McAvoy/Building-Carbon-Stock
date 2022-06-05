@@ -16,6 +16,7 @@ public interface GasConsumptionMapper {
     GasConsumption selectByPrimaryKey(Integer id); //根据主键查询
     GasConsumption selectByCreatedTime(Date date); //根据日期查询
     GasConsumption getMinCreatedTime(); //获取日期最小的数据
-    List<GasConsumption> getAll(); //获取所有数据
+    List<GasConsumption> getAllOrderById(); //获取按Id升序的所有数据
+    List<GasConsumption> getAllOrderByCreatedTime(); //获取按日期升序的所有数据
     int update(GasConsumption record); //更新
 }
