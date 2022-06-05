@@ -71,6 +71,10 @@ public class ConsumptionMapperTest {
         List<ElectricityConsumption> list = electricityConsumptionMapper.getAll();
         System.out.println(list);
 
+        //获取日期最小的数据
+        ElectricityConsumption min = electricityConsumptionMapper.getMinCreatedTime();
+        System.out.println(min);
+
         //插入
         GridEmissionFactor grid = gridEmissionFactorMapper.selectByPrimaryKey(1);
         ElectricityConsumption newObj = new ElectricityConsumption(2,1000.0,1000.0,1000.0,1000.0,1000.0,0.1229,0.1229,0.1229,0.1229,3000.0,0.36869,grid,2.8257,new Date());
