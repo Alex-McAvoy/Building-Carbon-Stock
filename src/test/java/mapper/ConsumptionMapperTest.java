@@ -256,15 +256,19 @@ public class ConsumptionMapperTest {
         List<HeatConsumption> list = heatConsumptionMapper.getAll();
         System.out.println(list);
 
-        //插入
-        HeatConsumption newObj = new HeatConsumption(2,1000.0,0.03412,0.0945977,new Date());
-        heatConsumptionMapper.insert(newObj);
+        //获取日期最小的数据
+        HeatConsumption min = heatConsumptionMapper.getMinCreatedTime();
+        System.out.println(min);
 
-        //删除
-        heatConsumptionMapper.deleteByPrimaryKey(2);
-
-        //更新
-        HeatConsumption updateObj = new HeatConsumption(2,500.0,0.03412,0.0945977,new Date());
-        heatConsumptionMapper.update(updateObj);
+//        //插入
+//        HeatConsumption newObj = new HeatConsumption(2,1000.0,0.03412,0.0945977,new Date());
+//        heatConsumptionMapper.insert(newObj);
+//
+//        //删除
+//        heatConsumptionMapper.deleteByPrimaryKey(2);
+//
+//        //更新
+//        HeatConsumption updateObj = new HeatConsumption(2,500.0,0.03412,0.0945977,new Date());
+//        heatConsumptionMapper.update(updateObj);
     }
 }
