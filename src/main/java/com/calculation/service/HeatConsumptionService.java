@@ -63,6 +63,13 @@ public class HeatConsumptionService {
         return heatConsumptionMapper.selectByCreatedTime(date);
     }
 
+    /**
+     * @Description: 获取日期最小的数据
+     * @Param: []
+     * @Return: com.calculation.bean.HeatConsumption
+     * @Author: Alex McAvoy
+     * @Date: 2022/6/5 13:50
+     **/
     public HeatConsumption getMinCreatedTime(){
         return heatConsumptionMapper.getMinCreatedTime();
     }
