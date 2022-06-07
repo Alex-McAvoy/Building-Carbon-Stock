@@ -34,15 +34,15 @@
     <!-- 管理员 -->
     <c:if test="${authority == 1}">
         <script type="text/javascript" src="${APP_PATH}/static/general/js/form-verification.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/steam/js/edit.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/steam/js/updateModal.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/steam/js/delete.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/steam/edit.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/steam/updateModal.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/steam/delete.js"></script>
     </c:if>
     <!-- 通用 -->
     <script type="text/javascript" src="${APP_PATH}/static/general/js/utils.js"></script>
     <script type="text/javascript"
-            src="${APP_PATH}/static/import/calculation/steam/js/consumption-emission.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/steam/js/visualization.js"></script>
+            src="${APP_PATH}/static/import/calculation/steam/consumption-emission.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/steam/visualization.js"></script>
 
     <!-- 自定义css -->
     <link rel="stylesheet" href="${APP_PATH}/static/general/css/import-page.css">
