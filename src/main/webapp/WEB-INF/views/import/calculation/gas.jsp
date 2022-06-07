@@ -34,14 +34,14 @@
     <!-- 管理员 -->
     <c:if test="${authority == 1}">
         <script type="text/javascript" src="${APP_PATH}/static/general/js/form-verification.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/js/edit.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/js/updateModal.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/js/delete.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/edit.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/updateModal.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/delete.js"></script>
     </c:if>
     <!-- 通用 -->
     <script type="text/javascript" src="${APP_PATH}/static/general/js/utils.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/js/consumption-emission.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/js/visualization.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/consumption-emission.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/gas/visualization.js"></script>
 
 
     <!-- 自定义css -->
