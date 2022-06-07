@@ -34,16 +34,16 @@
     <!-- 管理员 -->
     <c:if test="${authority == 1}">
         <script type="text/javascript" src="${APP_PATH}/static/general/js/form-verification.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/electricity/js/edit.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/electricity/edit.js"></script>
         <script type="text/javascript"
-                src="${APP_PATH}/static/import/calculation/electricity/js/updateModal.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/electricity/js/delete.js"></script>
+                src="${APP_PATH}/static/import/calculation/electricity/updateModal.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/electricity/delete.js"></script>
     </c:if>
     <!-- 通用 -->
     <script type="text/javascript" src="${APP_PATH}/static/general/js/utils.js"></script>
     <script type="text/javascript"
-            src="${APP_PATH}/static/import/calculation/electricity/js/consumption-emission.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/electricity/js/visualization.js"></script>
+            src="${APP_PATH}/static/import/calculation/electricity/consumption-emission.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/electricity/visualization.js"></script>
 
     <!-- 自定义css -->
     <link rel="stylesheet" href="${APP_PATH}/static/general/css/import-page.css">
