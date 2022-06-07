@@ -33,14 +33,14 @@
     <!-- 管理员 -->
     <c:if test="${authority == 1}">
         <script type="text/javascript" src="${APP_PATH}/static/general/js/form-verification.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/js/edit.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/js/updateModal.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/js/delete.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/edit.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/updateModal.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/delete.js"></script>
     </c:if>
     <!-- 通用 -->
     <script type="text/javascript" src="${APP_PATH}/static/general/js/utils.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/js/consumption-emission.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/js/visualization.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/consumption-emission.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/heat/visualization.js"></script>
 
     <!-- 自定义css -->
     <link rel="stylesheet" href="${APP_PATH}/static/general/css/import-page.css">
