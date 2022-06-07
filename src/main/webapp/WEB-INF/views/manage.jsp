@@ -18,7 +18,8 @@
     <%pageContext.setAttribute("APP_PATH", request.getContextPath());%>
     <%
         User user = (User) session.getAttribute("user");
-        Integer authority = user.getAuthority();
+        int authority = user.getAuthority();
+        pageContext.setAttribute("authority", authority);
     %>
     <script type="text/javascript">
         var APP_PATH = "<%=request.getContextPath()%>";
