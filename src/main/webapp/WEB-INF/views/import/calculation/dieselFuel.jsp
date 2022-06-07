@@ -34,14 +34,14 @@
     <!-- 管理员 -->
     <c:if test="${authority == 1}">
         <script type="text/javascript" src="${APP_PATH}/static/general/js/form-verification.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/js/edit.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/js/updateModal.js"></script>
-        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/js/delete.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/edit.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/updateModal.js"></script>
+        <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/delete.js"></script>
     </c:if>
     <!-- 通用 -->
     <script type="text/javascript" src="${APP_PATH}/static/general/js/utils.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/js/consumption-emission.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/js/visualization.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/consumption-emission.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/import/calculation/dieselFuel/visualization.js"></script>
 
     <!-- 自定义css -->
     <link rel="stylesheet" href="${APP_PATH}/static/general/css/import-page.css">
