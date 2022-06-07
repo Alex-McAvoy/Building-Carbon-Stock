@@ -1,4 +1,4 @@
-<%@ page import="com.user.bean.User" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Alex McAvoy
   Date: 2022/5/18
@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page import="com.user.bean.User" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -67,15 +69,13 @@
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <!-- 数据导入，仅管理员可用 -->
-                <%
-                    if (authority == 1) {
-                        out.print("<li class=\"layui-nav-item\">");
-                        out.print("<a href=\"javascript: importDataInput();\">");
-                        out.print("<span>数据导入</span>");
-                        out.print("</a>");
-                        out.print("</li>");
-                    }
-                %>
+                <c:if test="${authority == 1}">
+                    <li class="layui-nav-item">
+                        <a href="javascript: importDataInput();">
+                            <span>数据导入</span>
+                        </a>
+                    </li>
+                </c:if>
 
                 <li class="layui-nav-item">
                     <a href="javascript:;">
