@@ -133,24 +133,24 @@ function generateChart1(data) {
                     formatter: '{b}: {@2022-05-08} ({d}%)'  //标签内容格式器，支持字符串模板和回调函数两种形式
                 },
                 encode: { //可以定义 data 的哪个维度被编码成什么
-                    // itemName: '创建时间',
+                    itemName: '创建时间',
                     value: '2022-05-08',
                     tooltip: '2022-05-08'
                 }
             }
         ]
     });
-    var nameY = ['创建时间'];
+    var nameY = ["创建时间"];
     var series1 = ['暖通空调能耗'];
     var series2 = ['生活热水能耗'];
     var series3 = ['照明能耗'];
     var series4 = ['其他用能设备能耗'];
     $.each(data.extend.list, function (index, obj) {
         nameY.push(parseCreatedTime(obj.createdTime));    //挨个取出类别并填入类别数组
-        series1.push(obj.wn);
-        series2.push(obj.wr);
-        series3.push(obj.ww);
-        series4.push(obj.we);
+        series1.push(getThreeBit(obj.wn));
+        series2.push(getThreeBit(obj.wr));
+        series3.push(getThreeBit(obj.ww));
+        series4.push(getThreeBit(obj.we));
     });
     myChart.setOption({
         xAxis: { //传入折线图x轴数据
@@ -169,7 +169,7 @@ function generateChart1(data) {
     myChart.on('updateAxisPointer', function (event) {
         var xAxisInfo = event.axesInfo[0];
         if (xAxisInfo) {
-            var dimension = xAxisInfo.value+1 ;
+            var dimension = xAxisInfo.value;
             myChart.setOption({
                 series: {
                     id: 'pie',
@@ -184,7 +184,6 @@ function generateChart1(data) {
             });
         }
     });
-
 };
 
 //生成总用电量图
@@ -362,12 +361,12 @@ function generateChart3(data) {
     var nameY = [];
     var series = [];
     $.each(data.extend.list, function (index, obj) {
-        nameY.push(parseCreatedTime(obj.createdTime));    //挨个取出类别并填入类别数组
+        nameY.push(parseCreatedTime(obj.createdTime)); //挨个取出类别并填入类别数组
         series.push(getThreeBit(obj.welectricity));
     });
 
-    // myChart.hideLoading();    //隐藏加载动画
-    myChart.setOption({        //加载数据图表
+    // myChart.hideLoading(); //隐藏加载动画
+    myChart.setOption({ //加载数据图表
         xAxis: {
             data: nameY
         },
