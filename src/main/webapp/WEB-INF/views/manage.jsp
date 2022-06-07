@@ -106,7 +106,7 @@
                     <span>排放因子库</span>
                 </a></li>
                 <li class="layui-nav-item"><a href="javascript:importDataShow();">
-                    <span>数据展示</span>
+                    <span>整体数据展示</span>
                 </a></li>
             </ul>
         </div>
