@@ -56,6 +56,23 @@ function generateChart1(data) {
                 name: '暖通空调能耗',
                 type: 'line',
                 smooth: true, //是否平滑曲线显示
+                lineStyle:{
+                    color:'#343be0',
+                },
+                areaStyle:{
+                    color: new echarts.graphic.LinearGradient(
+                        0,0,0,1,[
+                            {
+                                offset:0,
+                                color:"rgba(1,132,213,0.4)" //渐变起始颜色
+                            },
+                            {
+                                offset: 0.8,
+                                color: "rgba(52,59,224,0.2)" //渐变结束颜色
+                            }
+                        ], false
+                    ),shadowColor: "rgba(0,0,0,0.1)"
+                },
                 markLine: { //图表标线
                     silent: true, //默认为 false，即响应和触发鼠标事件
                     lineStyle: { //标线样式
@@ -70,6 +87,23 @@ function generateChart1(data) {
                 name: '生活热水能耗',
                 type: 'line',
                 smooth: true,
+                lineStyle:{
+                    color:'#85ac38',
+                },
+                areaStyle:{
+                    color: new echarts.graphic.LinearGradient(
+                        0,0,0,1,[
+                            {
+                                offset:0,
+                                color:"rgba(1,132,213,0.4)" //渐变起始颜色
+                            },
+                            {
+                                offset: 0.8,
+                                color: "rgba(133,127,56,0.2)" //渐变结束颜色
+                            }
+                        ], false
+                    ),shadowColor: "rgba(0,0,0,0.1)"
+                },
                 markLine: { //图表标线
                     silent: true, //默认为 false，即响应和触发鼠标事件
                     lineStyle: { //标线样式
@@ -84,6 +118,23 @@ function generateChart1(data) {
                 name: '照明能耗',
                 type: 'line',
                 smooth: true,
+                lineStyle:{
+                    color:'#fac852',
+                },
+                areaStyle:{
+                    color: new echarts.graphic.LinearGradient(
+                        0,0,0,1,[
+                            {
+                                offset:0,
+                                color:"rgba(1,132,213,0.4)" //渐变起始颜色
+                            },
+                            {
+                                offset: 0.8,
+                                color: "rgba(250,200,82,0.2)" //渐变结束颜色
+                            }
+                        ], false
+                    ),shadowColor: "rgba(0,0,0,0.1)"
+                },
                 markLine: { //图表标线
                     silent: true, //默认为 false，即响应和触发鼠标事件
                     lineStyle: { //标线样式
@@ -98,6 +149,23 @@ function generateChart1(data) {
                 name: '其它用能设备能耗',
                 type: 'line',
                 smooth: true,
+                lineStyle:{
+                    color:'#ce4d5e',
+                },
+                areaStyle:{
+                    color: new echarts.graphic.LinearGradient(
+                        0,0,0,1,[
+                            {
+                                offset:0,
+                                color:"rgba(1,132,213,0.4)" //渐变起始颜色
+                            },
+                            {
+                                offset: 0.8,
+                                color: "rgba(206,77,94,0.2)" //渐变结束颜色
+                            }
+                        ], false
+                    ),shadowColor: "rgba(0,0,0,0.1)"
+                },
                 markLine: { //图表标线
                     silent: true, //默认为 false，即响应和触发鼠标事件
                     lineStyle: { //标线样式
@@ -222,31 +290,46 @@ function generateChart2(data) {
             pieces: [{ //定义每块范围
                 gt: 0,
                 lte: 3000,
-                color: '#FBDB0F'
+                color: '#54a1c9'
             }, {
                 gt: 3000,
                 lte: 6000,
-                color: '#FC7D02'
+                color: '#199ce1'
             }, {
                 gt: 6000,
                 lte: 9000,
-                color: '#FD0100'
+                color: '#386ed2'
             }, {
                 gt: 9000,
                 lte: 12000,
-                color: '#AA069F'
+                color: '#7f06a1'
             }, {
                 gt: 12000,
-                color: '#b035d3'
+                color: '#051167'
             }],
             outOfRange: {
-                color: '#999'
+                color: '#0de3bd'
             }
         },
         series: {
             name: '总用电量',
             type: 'line',
             data: [],
+            smooth:0.5, //线是否圆滑
+            areaStyle:{
+                color: new echarts.graphic.LinearGradient(
+                    0,0,0,1,[
+                        {
+                            offset:0,
+                            color:"rgba(1,132,213,0.4)"
+                        },
+                        {
+                            offset: 0.8,
+                            color: "rgba(1,132,213,0.1)"
+                        }
+                    ], false
+                ),shadowColor: "rgba(0,0,0,0.1)"
+            },
             markLine: { //图表标线
                 silent: true, //默认为false，即响应和触发鼠标事件
                 lineStyle: { //标线的样式
@@ -317,31 +400,46 @@ function generateChart3(data) {
             pieces: [{ //定义每块范围
                 gt: 0,
                 lte: 3,
-                color: '#FBDB0F'
+                color: '#54a1c9'
             }, {
                 gt: 3,
                 lte: 6,
-                color: '#FC7D02'
+                color: '#199ce1'
             }, {
                 gt: 6,
                 lte: 9,
-                color: '#FD0100'
+                color: '#386ed2'
+            }, {
+                gt: 9,
+                lte: 12,
+                color: '#7f06a1'
             }, {
                 gt: 12,
-                lte: 15,
-                color: '#AA069F'
-            }, {
-                gt: 15,
-                color: '#b035d3'
+                color: '#051167'
             }],
             outOfRange: {
-                color: '#999'
+                color: '#0de3bd'
             }
         },
         series: {
             name: '电力转换能耗',
             type: 'line',
             data: [],
+            smooth:0.5, //线是否圆滑
+            areaStyle:{
+                color: new echarts.graphic.LinearGradient(
+                    0,0,0,1,[
+                        {
+                            offset:0,
+                            color:"rgba(1,132,213,0.4)"
+                        },
+                        {
+                            offset: 0.8,
+                            color: "rgba(1,132,213,0.1)"
+                        }
+                    ], false
+                ),shadowColor: "rgba(0,0,0,0.1)"
+            },
             markLine: { //图表标线
                 silent: true, //默认为false，即响应和触发鼠标事件
                 lineStyle: { //标线的样式

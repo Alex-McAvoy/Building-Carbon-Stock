@@ -48,45 +48,60 @@ function generateChart1(data) {
         visualMap: {  //分段型视觉映射组件
             top: 50,
             right: 10,
-            precision: 1,  //设置小数精度
+            precision: 2,  //设置小数精度
             pieces: [{ //定义每块范围
                 gt: 0,
-                lte: 0.5,
-                color: '#FBDB0F'
+                lte: 0.03,
+                color: '#54a1c9'
             }, {
-                gt: 0.5,
-                lte: 1,
-                color: '#FC7D02'
+                gt: 0.03,
+                lte: 0.06,
+                color: '#199ce1'
             }, {
-                gt: 1,
-                lte: 1.5,
-                color: '#FD0100'
+                gt: 0.06,
+                lte: 0.09,
+                color: '#386ed2'
             }, {
-                gt: 1.5,
-                lte: 2,
-                color: '#AA069F'
+                gt: 0.09,
+                lte: 0.12,
+                color: '#7f06a1'
             }, {
-                gt: 2,
-                color: '#AC3B2A'
+                gt: 0.12,
+                color: '#051167'
             }],
             outOfRange: {
-                color: '#999'
+                color: '#0de3bd'
             }
         },
         series: {
             name: 'wSteam',
             type: 'line',
             data: [],
+            smooth:0.5, //线是否圆滑
+            areaStyle:{
+                color: new echarts.graphic.LinearGradient(
+                    0,0,0,1,[
+                        {
+                            offset:0,
+                            color:"rgba(1,132,213,0.4)"
+                        },
+                        {
+                            offset: 0.8,
+                            color: "rgba(1,132,213,0.1)"
+                        }
+                    ], false
+                ),shadowColor: "rgba(0,0,0,0.1)"
+            },
             markLine: { //图表标线
                 silent: true, //默认为 false，即响应和触发鼠标事件
                 lineStyle: { //标线样式
                     color: '#333'
                 },
                 data: [
-                    {yAxis: 0.5},
-                    {yAxis: 1},
-                    {yAxis: 1.5},
-                    {yAxis: 2}
+                    {yAxis: 0.03},
+                    {yAxis: 0.06},
+                    {yAxis: 0.09},
+                    {yAxis: 0.12}
                 ]
             }
         }
@@ -121,7 +136,7 @@ function generateChart2(data) {
         },
         grid: { //grid组件
             left: '5%',
-            right: '15%',
+            // right: '15%',
             bottom: '10%'
         },
         xAxis: {
@@ -146,43 +161,58 @@ function generateChart2(data) {
             precision: 1,
             pieces: [{ //定义每块范围
                 gt: 0,
-                lte: 0.5,
-                color: '#FBDB0F'
+                lte: 3000,
+                color: '#54a1c9'
             }, {
-                gt: 0.5,
-                lte: 1,
-                color: '#FC7D02'
+                gt: 3000,
+                lte: 6000,
+                color: '#199ce1'
             }, {
-                gt: 1,
-                lte: 1.5,
-                color: '#FD0100'
+                gt: 6000,
+                lte: 9000,
+                color: '#386ed2'
             }, {
-                gt: 1.5,
-                lte: 2,
-                color: '#AA069F'
+                gt: 9000,
+                lte: 12000,
+                color: '#7f06a1'
             }, {
-                gt: 2,
-                color: '#b035d3'
+                gt: 12000,
+                color: '#051167'
             }],
             outOfRange: {
-                color: '#999'
+                color: '#0de3bd'
             }
         },
         series: {
             name: 'tSteam',
             type: 'line',
             data: [],
+            smooth:0.5, //线是否圆滑
+            areaStyle:{
+                color: new echarts.graphic.LinearGradient(
+                    0,0,0,1,[
+                        {
+                            offset:0,
+                            color:"rgba(1,132,213,0.4)"
+                        },
+                        {
+                            offset: 0.8,
+                            color: "rgba(1,132,213,0.1)"
+                        }
+                    ], false
+                ),shadowColor: "rgba(0,0,0,0.1)"
+            },
             markLine: { //图表标线
                 silent: true, //默认为false，即响应和触发鼠标事件
                 lineStyle: { //标线的样式
                     color: '#333'
                 },
                 data: [
-                    {yAxis: 0.5},
-                    {yAxis: 1},
-                    {yAxis: 1.5},
-                    {yAxis: 2},
-                    {yAxis: 2.5}
+                    {yAxis: 3000},
+                    {yAxis: 6000},
+                    {yAxis: 9000},
+                    {yAxis: 12000},
+                    {yAxis: 15000}
                 ]
             }
         }
