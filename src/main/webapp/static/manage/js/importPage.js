@@ -61,11 +61,3 @@ function importFactorShow() {
         '<iframe src="' + APP_PATH + '/import/factor-show" width="100%" height="100%"></iframe>'
     );
 }
-
-//导入数据展示页
-function importDataShow() {
-    $("#content").empty();
-    $("#content").append(
-        '<iframe src="' + APP_PATH + '/import/data-show" width="100%" height="100%"></iframe>'
-    );
-}

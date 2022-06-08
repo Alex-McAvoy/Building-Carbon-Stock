@@ -108,16 +108,5 @@ public class PageController {
     public String importFactorShowPage(){
         return "/import/factor-show";
     }
-    
-    /**
-     * @Description: 数据展示页
-     * @Param: []
-     * @Return: java.lang.String
-     * @Author: Alex McAvoy
-     * @Date: 2022/5/19 21:06
-     **/
-    @RequestMapping("/data-show")
-    public String importDataShowPage(){
-        return "/import/data-show";
-    }
+
 }
