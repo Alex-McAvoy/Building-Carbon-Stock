@@ -52,31 +52,46 @@ function generateChart1(data) {
             pieces: [{ //定义每块范围
                 gt: 0,
                 lte: 0.5,
-                color: '#FBDB0F'
+                color: '#54a1c9'
             }, {
                 gt: 0.5,
                 lte: 1,
-                color: '#FC7D02'
+                color: '#199ce1'
             }, {
                 gt: 1,
                 lte: 1.5,
-                color: '#FD0100'
+                color: '#386ed2'
             }, {
                 gt: 1.5,
                 lte: 2,
-                color: '#AA069F'
+                color: '#7f06a1'
             }, {
                 gt: 2,
-                color: '#AC3B2A'
+                color: '#051167'
             }],
             outOfRange: {
-                color: '#999'
+                color: '#0de3bd'
             }
         },
         series: {
             name: 'wDiesel',
             type: 'line',
             data: [],
+            smooth:0.5, //线是否圆滑
+            areaStyle:{
+                color: new echarts.graphic.LinearGradient(
+                    0,0,0,1,[
+                        {
+                            offset:0,
+                            color:"rgba(1,132,213,0.4)"
+                        },
+                        {
+                            offset: 0.8,
+                            color: "rgba(1,132,213,0.1)"
+                        }
+                    ], false
+                ),shadowColor: "rgba(0,0,0,0.1)"
+            },
             markLine: { //图表标线
                 silent: true, //默认为 false，即响应和触发鼠标事件
                 lineStyle: { //标线样式
@@ -146,43 +161,58 @@ function generateChart2(data) {
             precision: 1,
             pieces: [{ //定义每块范围
                 gt: 0,
-                lte: 0.5,
-                color: '#FBDB0F'
-            }, {
-                gt: 0.5,
                 lte: 1,
-                color: '#FC7D02'
+                color: '#54a1c9'
             }, {
                 gt: 1,
-                lte: 1.5,
-                color: '#FD0100'
-            }, {
-                gt: 1.5,
                 lte: 2,
-                color: '#AA069F'
+                color: '#199ce1'
             }, {
                 gt: 2,
-                color: '#b035d3'
+                lte: 3,
+                color: '#386ed2'
+            }, {
+                gt: 3,
+                lte: 4,
+                color: '#7f06a1'
+            }, {
+                gt: 4,
+                color: '#051167'
             }],
             outOfRange: {
-                color: '#999'
+                color: '#0de3bd'
             }
         },
         series: {
             name: 'tDiesel',
             type: 'line',
             data: [],
+            smooth:0.5, //线是否圆滑
+            areaStyle:{
+                color: new echarts.graphic.LinearGradient(
+                    0,0,0,1,[
+                        {
+                            offset:0,
+                            color:"rgba(1,132,213,0.4)"
+                        },
+                        {
+                            offset: 0.8,
+                            color: "rgba(1,132,213,0.1)"
+                        }
+                    ], false
+                ),shadowColor: "rgba(0,0,0,0.1)"
+            },
             markLine: { //图表标线
                 silent: true, //默认为false，即响应和触发鼠标事件
                 lineStyle: { //标线的样式
                     color: '#333'
                 },
                 data: [
-                    {yAxis: 0.5},
                     {yAxis: 1},
-                    {yAxis: 1.5},
                     {yAxis: 2},
-                    {yAxis: 2.5}
+                    {yAxis: 3},
+                    {yAxis: 4},
+                    {yAxis: 5}
                 ]
             }
         }
