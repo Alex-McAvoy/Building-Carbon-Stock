@@ -1,4 +1,6 @@
 # Building-Carbon-Stock
 
-智慧楼宇碳检测系统 V1.0
+帮导师写的智慧楼宇碳检测系统
+
+Verson：1.0
 
