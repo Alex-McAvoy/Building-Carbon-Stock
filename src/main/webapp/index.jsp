@@ -39,7 +39,7 @@
     </div>
     <div class="from-container">
         <from>
-            <div class="form-title"><span>智慧楼宇碳监测系统</span></div>
+            <div class="form-title"><span>楼宇碳监测与核算数字化平台</span></div>
             <div class="input-container">
                 <input type="text" id="user" placeholder="用户名">
                 <span class="input-span" id="input-user"></span>
