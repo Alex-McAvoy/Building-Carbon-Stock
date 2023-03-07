@@ -13,7 +13,7 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>智慧楼宇碳检测系统</title>
+    <title>楼宇碳监测与核算数字化平台</title>
 
     <%pageContext.setAttribute("APP_PATH", request.getContextPath());%>
     <%
@@ -46,7 +46,7 @@
     <!-- 头部 -->
     <div class="layui-header">
         <div class="layui-logo layui-hide-xs">
-            <span>智慧楼宇碳监测系统</span>
+            <p style="font-size:20px">楼宇碳监测与核算数字化平台</p>
         </div>
 
         <!-- 登录 -->
@@ -113,13 +113,13 @@
     <!-- 内容主体区域 -->
     <div class="layui-body" id="content">
         <div>
-            <h1>欢迎使用智慧楼宇碳检测系统</h1>
+            <h1>欢迎使用楼宇碳监测与核算数字化平台</h1>
         </div>
     </div>
 
     <!-- 底部固定区域 -->
     <div class="layui-footer">
-        <span>智慧楼宇碳检测系统 v1.0 @Author: Alex_McAvoy </span>
+        <span>楼宇碳监测与核算数字化平台 v1.0 @Author: Alex_McAvoy </span>
     </div>
 
 </div>
